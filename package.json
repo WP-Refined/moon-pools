@@ -17,7 +17,7 @@
             "prettier . --write",
             "eslint --ext .js,.vue --ignore-path .gitignore --fix resources/js"
         ],
-        "*.{html,css}": [
+        "*.{scss}": [
             "prettier . --write"
         ]
     },
@@ -39,7 +39,8 @@
         "webpack-cli": "^4.9.2"
     },
     "dependencies": {
+        "balm-ui": "^9.42.2",
         "luxon": "^2.3.1",
-        "vue": "^3.2.31"
+        "vue": "^3.2.30"
     }
 }

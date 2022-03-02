@@ -11,5 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .vue();
+mix.webpackConfig({
+    resolve: {
+        modules: ['node_modules'],
+        alias: {
+            '@': 'resources/js',
+            'balm-ui-plus': 'balm-ui/dist/balm-ui-plus.js',
+            'balm-ui-css': 'balm-ui/dist/balm-ui.css',
+        },
+    },
+});
+
+mix.js('resources/js/app.js', 'public/js').vue();
