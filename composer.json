@@ -2,7 +2,10 @@
     "name": "wp-refined/cardano-insights",
     "type": "project",
     "description": "The user friendly solution to exploring ADA pools, and viewing stats for the Cardano ecosystem.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",

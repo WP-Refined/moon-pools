@@ -61,22 +61,33 @@
 
         <div id="content-main">
             <p v-for="i in 5" :key="i">Content {{ i }}</p>
-
             <ui-tab-bar v-model="active" class="hero-demo-tab-bar">
-                <ui-tab v-for="(item, index) in list" :key="index">{{
-                    item
-                }}</ui-tab>
+                <ui-tab> Pools </ui-tab>
+                <ui-tab> Favourites </ui-tab>
+                <ui-tab> Rewards </ui-tab>
             </ui-tab-bar>
+            <ui-panels>
+                <ui-panel>
+                    <pools-table></pools-table>
+                </ui-panel>
+                <ui-panel>...</ui-panel>
+                <ui-panel>...</ui-panel>
+            </ui-panels>
         </div>
     </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+import PoolsTable from './../Pools/PoolsTable.vue';
 
 export default defineComponent({
+    components: {
+        PoolsTable,
+    },
     data() {
         return {
+            active: 0,
             type: 0,
             title: 'Cardano Insights',
             openDrawer: false,
