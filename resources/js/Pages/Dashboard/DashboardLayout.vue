@@ -77,7 +77,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import PoolsTable from './../Pools/PoolsTable.vue';
 

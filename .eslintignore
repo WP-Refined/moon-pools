@@ -1,0 +1,12 @@
+vendor
+tests
+storage
+routes
+app
+bootstrap
+config
+database
+lang
+public
+node_modules
+webpack.mix.js

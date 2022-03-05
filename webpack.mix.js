@@ -22,4 +22,6 @@ mix.webpackConfig({
     },
 });
 
-mix.js('resources/js/app.js', 'public/js').vue();
+mix.ts('resources/js/main.ts', 'public/js').vue({ version: 3 });
+mix.sass('resources/scss/main.scss', 'public/css');
+mix.extract();

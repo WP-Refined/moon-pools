@@ -20,11 +20,14 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
             <dashboard-layout></dashboard-layout>
         </div>
     </body>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/manifest.js') }}"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </html>

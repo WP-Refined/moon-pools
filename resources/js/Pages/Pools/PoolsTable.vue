@@ -37,7 +37,7 @@
     </ui-table>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -159,10 +159,10 @@ export default defineComponent({
     },
 
     methods: {
-        show(data) {
+        show(data: any) {
             alert(JSON.stringify(data));
         },
-        onPage(page) {
+        onPage(page: number) {
             alert('Page change to ' + page);
         },
     },
