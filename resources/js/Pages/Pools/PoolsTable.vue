@@ -1,6 +1,13 @@
 <template>
-    <div>
-        <ui-textfield outlined> Search... </ui-textfield>
+    <div class="py-3">
+        <ui-autocomplete
+            v-model="poolFilter"
+            outlined
+            placeholder="Search ..."
+            delay="500"
+            :source="[]"
+            auto-focus
+        ></ui-autocomplete>
         <ui-button raised>Advanced</ui-button>
     </div>
     <ui-table
@@ -39,6 +46,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { Pool } from './types/Pool';
 
 export default defineComponent({
     data() {
@@ -108,7 +116,7 @@ export default defineComponent({
                     fees: 87,
                     luck: 4.9,
                 },
-            ],
+            ] as Pool[],
             thead: [
                 'Details',
                 {
@@ -135,13 +143,13 @@ export default defineComponent({
                 },
                 {
                     field: 'roa',
-                    fn: data => {
+                    fn: (data: Pool) => {
                         return data.roa + '%';
                     },
                 },
                 {
                     field: 'saturation',
-                    fn: data => {
+                    fn: (data: Pool) => {
                         return data.saturation + 'm / 64m';
                     },
                 },
@@ -155,6 +163,7 @@ export default defineComponent({
             selectedRows: [],
             page: 1,
             total: 12,
+            poolFilter: '',
         };
     },
 
@@ -162,7 +171,7 @@ export default defineComponent({
         show(data: any) {
             alert(JSON.stringify(data));
         },
-        onPage(page: number) {
+        onPage(page: Event) {
             alert('Page change to ' + page);
         },
     },

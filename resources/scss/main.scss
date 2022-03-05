@@ -1,6 +1,8 @@
+@use 'tailwindcss/utilities';
+
 @use '@material/theme' as theme-variables with (
-    $primary: #6200ee,
-    $secondary: #018786
+    $primary: #7849f6,
+    $secondary: #8a8a8a
 );
 
 /// Material Icons (order !important)

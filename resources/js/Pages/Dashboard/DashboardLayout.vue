@@ -2,9 +2,9 @@
     <div class="page--top-app-bar">
         <ui-top-app-bar
             content-selector="#content-main"
-            :type="type"
-            :title="title"
-            @nav="openDrawer = true"
+            :type="0"
+            :title="appBarTitle"
+            @nav="openSidebar = true"
         >
             <template #toolbar="{ toolbarItemClass }">
                 <ui-icon-button
@@ -18,7 +18,7 @@
             </template>
         </ui-top-app-bar>
 
-        <ui-drawer v-model="openDrawer" type="modal">
+        <ui-drawer v-model="openSidebar" type="modal">
             <ui-drawer-header>
                 <ui-drawer-title>Menu</ui-drawer-title>
             </ui-drawer-header>
@@ -60,13 +60,29 @@
         </ui-drawer>
 
         <div id="content-main">
+            <div class="grid grid-cols-6 gap-4 my-5">
+                <div class="col-span-4">
+                    <h2 class="mt-2 mb-0">Insights</h2>
+                </div>
+                <div class="col-span-2">
+                    <ui-select
+                        icon="trending_up"
+                        :options="availableInsights"
+                        :fullwidth="true"
+                        outlined
+                    >
+                    </ui-select>
+                </div>
+            </div>
+
             <p v-for="i in 5" :key="i">Content {{ i }}</p>
-            <ui-tab-bar v-model="active" class="hero-demo-tab-bar">
+
+            <ui-tab-bar v-model="activeTab" class="hero-demo-tab-bar">
                 <ui-tab> Pools </ui-tab>
                 <ui-tab> Favourites </ui-tab>
                 <ui-tab> Rewards </ui-tab>
             </ui-tab-bar>
-            <ui-panels>
+            <ui-panels v-model="activeTab">
                 <ui-panel>
                     <pools-table></pools-table>
                 </ui-panel>
@@ -80,18 +96,34 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import PoolsTable from './../Pools/PoolsTable.vue';
+import { Insight } from './types/Insight';
+
+interface State {
+    availableInsights: Insight[];
+    activeTab: number;
+    appBarTitle: string;
+    openSidebar: boolean;
+}
 
 export default defineComponent({
     components: {
         PoolsTable,
     },
-    data() {
+    data(): State {
         return {
-            active: 0,
-            type: 0,
-            title: 'Cardano Insights',
-            openDrawer: false,
-            list: ['Pools', 'Favourites', 'Rewards'],
+            availableInsights: [
+                {
+                    value: 1,
+                    label: 'Total Circulating ADA',
+                },
+                {
+                    value: 2,
+                    label: 'Total Staked ADA',
+                },
+            ] as Insight[],
+            activeTab: 0,
+            appBarTitle: 'Cardano Insights',
+            openSidebar: false,
         };
     },
 });
