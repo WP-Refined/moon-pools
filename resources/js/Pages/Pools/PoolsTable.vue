@@ -1,15 +1,5 @@
 <template>
-    <div class="py-3">
-        <ui-autocomplete
-            v-model="poolFilter"
-            outlined
-            placeholder="Search ..."
-            delay="500"
-            :source="[]"
-            auto-focus
-        ></ui-autocomplete>
-        <ui-button raised>Advanced</ui-button>
-    </div>
+    <pool-search></pool-search>
     <ui-table
         v-model="selectedRows"
         fullwidth
@@ -46,9 +36,70 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Pool } from './types/Pool';
+import type { Pool } from './types/Pool';
+import type {
+    DataTableThead,
+    DataTableTbody,
+} from './../../Shared/types/DataTable';
+import PoolSearch from './PoolSearch.vue';
+
+const TABLE_HEADERS: DataTableThead[] = [
+    {
+        value: 'Details',
+    },
+    {
+        value: 'Ticker',
+        sort: 'asc',
+        columnId: 'ticker',
+    },
+    {
+        slot: 'th-roa',
+        columnId: 'roa',
+    },
+    {
+        value: 'Saturation',
+    },
+    {
+        value: 'Fees / Margin',
+    },
+    {
+        value: 'Luck',
+    },
+];
+
+const TABLE_FIELDS: DataTableTbody[] = [
+    {
+        width: 100,
+        slot: 'actions',
+    },
+    {
+        width: 200,
+        slot: 'ticker',
+    },
+    {
+        field: 'roa',
+        fn: (data: Pool) => {
+            return data.roa + '%';
+        },
+    },
+    {
+        field: 'saturation',
+        fn: (data: Pool) => {
+            return data.saturation + 'm / 64m';
+        },
+    },
+    {
+        field: 'fees',
+    },
+    {
+        field: 'luck',
+    },
+];
 
 export default defineComponent({
+    components: {
+        PoolSearch,
+    },
     data() {
         return {
             data: [
@@ -117,49 +168,8 @@ export default defineComponent({
                     luck: 4.9,
                 },
             ] as Pool[],
-            thead: [
-                'Details',
-                {
-                    value: 'Ticker',
-                    sort: 'asc',
-                    columnId: 'ticker',
-                },
-                {
-                    slot: 'th-roa',
-                    columnId: 'roa',
-                },
-                'Saturation',
-                'Fees / Margin',
-                'Luck',
-            ],
-            tbody: [
-                {
-                    width: 100,
-                    slot: 'actions',
-                },
-                {
-                    width: 200,
-                    slot: 'ticker',
-                },
-                {
-                    field: 'roa',
-                    fn: (data: Pool) => {
-                        return data.roa + '%';
-                    },
-                },
-                {
-                    field: 'saturation',
-                    fn: (data: Pool) => {
-                        return data.saturation + 'm / 64m';
-                    },
-                },
-                {
-                    field: 'fees',
-                },
-                {
-                    field: 'luck',
-                },
-            ],
+            thead: TABLE_HEADERS,
+            tbody: TABLE_FIELDS,
             selectedRows: [],
             page: 1,
             total: 12,

@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,9 +14,11 @@ const mix = require('laravel-mix');
 
 mix.webpackConfig({
     resolve: {
+        symlinks: false,
         modules: ['node_modules'],
         alias: {
-            '@': 'resources/js',
+            '@': path.resolve('resources/js'),
+            '@shared': path.resolve(__dirname, 'resources/js/Shared'),
             'balm-ui-plus': 'balm-ui/dist/balm-ui-plus.js',
             'balm-ui-css': 'balm-ui/dist/balm-ui.css',
         },
@@ -24,4 +27,4 @@ mix.webpackConfig({
 
 mix.ts('resources/js/main.ts', 'public/js').vue({ version: 3 });
 mix.sass('resources/scss/main.scss', 'public/css');
-mix.extract();
+mix.extract(['vue']);

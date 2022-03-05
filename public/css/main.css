@@ -17,31 +17,28 @@
 .col-span-2{
   grid-column: span 2 / span 2;
 }
-.col-start-2{
-  grid-column-start: 2;
+.col-span-5{
+  grid-column: span 5 / span 5;
 }
-.col-start-1{
-  grid-column-start: 1;
-}
-.col-end-3{
-  grid-column-end: 3;
-}
-.col-end-7{
-  grid-column-end: 7;
-}
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
+.col-span-1{
+  grid-column: span 1 / span 1;
 }
 .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-.ml-1{
-  margin-left: 0.25rem;
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 .mt-2{
   margin-top: 0.5rem;
+}
+.mb-0{
+  margin-bottom: 0px;
+}
+.ml-1{
+  margin-left: 0.25rem;
 }
 .mr-2{
   margin-right: 0.5rem;
@@ -63,12 +60,6 @@
 }
 .-mt-px{
   margin-top: -1px;
-}
-.mt-1{
-  margin-top: 0.25rem;
-}
-.mb-0{
-  margin-bottom: 0px;
 }
 .flex{
   display: flex;
@@ -103,11 +94,11 @@
 .max-w-6xl{
   max-width: 72rem;
 }
-.grid-cols-1{
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .items-center{
   align-items: center;
@@ -135,10 +126,6 @@
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-.bg-sky-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 .p-6{
   padding: 1.5rem;
