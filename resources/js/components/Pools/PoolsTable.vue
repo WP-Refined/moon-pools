@@ -1,37 +1,41 @@
 <template>
-    <pool-search></pool-search>
-    <ui-table
-        v-model="selectedRows"
-        fullwidth
-        :data="data"
-        :thead="thead"
-        :tbody="tbody"
-    >
-        <template #th-roa>
-            ROA
-            <ui-icon
-                v-tooltip="
-                    'Return of ADA based on staking result from last 30 days'
-                "
-                aria-describedby="th-cell-1"
+    <div class="mx-2">
+        <pool-search></pool-search>
+        <div class="overflow-hidden">
+            <ui-table
+                v-model="selectedRows"
+                fullwidth
+                :data="data"
+                :thead="thead"
+                :tbody="tbody"
             >
-                error_outline
-            </ui-icon>
-        </template>
-        <template #ticker="{ data }">
-            <div class="ticker">{{ data.ticker }}</div>
-        </template>
-        <template #actions="{ data }">
-            <ui-icon @click="show(data)">description</ui-icon>
-        </template>
+                <template #th-roa>
+                    ROA
+                    <ui-icon
+                        v-tooltip="
+                            'Return of ADA based on staking result from last 30 days'
+                        "
+                        aria-describedby="th-cell-1"
+                    >
+                        error_outline
+                    </ui-icon>
+                </template>
+                <template #ticker="{ data }">
+                    <div class="ticker">{{ data.ticker }}</div>
+                </template>
+                <template #actions="{ data }">
+                    <ui-fab mini icon="add" @click="show(data)" />
+                </template>
 
-        <ui-pagination
-            v-model="page"
-            :total="total"
-            show-total
-            @change="onPage"
-        ></ui-pagination>
-    </ui-table>
+                <ui-pagination
+                    v-model="page"
+                    :total="total"
+                    show-total
+                    @change="onPage"
+                ></ui-pagination>
+            </ui-table>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -40,7 +44,7 @@ import type { Pool } from './types/Pool';
 import type {
     DataTableThead,
     DataTableTbody,
-} from './../../Shared/types/DataTable';
+} from '../../shared/types/DataTable';
 import PoolSearch from './PoolSearch.vue';
 
 const TABLE_HEADERS: DataTableThead[] = [
@@ -187,3 +191,11 @@ export default defineComponent({
     },
 });
 </script>
+
+<style lang="scss" scoped>
+// Decrease size just for the pool table rows
+.mdc-fab--mini {
+    width: 30px;
+    height: 30px;
+}
+</style>

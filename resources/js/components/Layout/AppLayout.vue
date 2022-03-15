@@ -60,69 +60,31 @@
         </ui-drawer>
 
         <div id="content-main">
-            <div class="grid grid-cols-6 gap-4 my-5">
-                <div class="col-span-4">
-                    <h2 class="mt-2 mb-0">Insights</h2>
-                </div>
-                <div class="col-span-2">
-                    <ui-select
-                        icon="trending_up"
-                        :options="availableInsights"
-                        :fullwidth="true"
-                        outlined
-                    >
-                    </ui-select>
-                </div>
-            </div>
-
-            <p v-for="i in 5" :key="i">Content {{ i }}</p>
-
-            <ui-tab-bar v-model="activeTab" class="hero-demo-tab-bar">
-                <ui-tab> Pools </ui-tab>
-                <ui-tab> Favourites </ui-tab>
-                <ui-tab> Rewards </ui-tab>
-            </ui-tab-bar>
-            <ui-panels v-model="activeTab">
-                <ui-panel>
-                    <pools-table></pools-table>
-                </ui-panel>
-                <ui-panel>...</ui-panel>
-                <ui-panel>...</ui-panel>
-            </ui-panels>
+            <slot name="content" />
         </div>
+
+        <!-- <footer>
+          <slot name="footer">
+              <div>
+                  <p class="inline-flex items-center">Made with <ui-icon class="primary">favorite</ui-icon> from <img class="w-10 rounded-sm" src="/images/au-flag.svg" alt=""></p>
+              </div>
+          </slot>
+      </footer> -->
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import PoolsTable from './../Pools/PoolsTable.vue';
-import { Insight } from './types/Insight';
 
 interface State {
-    availableInsights: Insight[];
-    activeTab: number;
     appBarTitle: string;
     openSidebar: boolean;
 }
 
 export default defineComponent({
-    components: {
-        PoolsTable,
-    },
     data(): State {
         return {
-            availableInsights: [
-                {
-                    value: 1,
-                    label: 'Total Circulating ADA',
-                },
-                {
-                    value: 2,
-                    label: 'Total Staked ADA',
-                },
-            ] as Insight[],
-            activeTab: 0,
-            appBarTitle: 'Cardano Insights',
+            appBarTitle: 'Moon Pools',
             openSidebar: false,
         };
     },

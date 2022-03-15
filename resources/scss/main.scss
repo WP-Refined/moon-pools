@@ -1,8 +1,9 @@
 @use 'tailwindcss/utilities';
 
+// TODO: Find a suitable secondary and update component styles
 @use '@material/theme' as theme-variables with (
     $primary: #7849f6,
-    $secondary: #8a8a8a
+    $secondary: #7849f6
 );
 
 /// Material Icons (order !important)
@@ -54,3 +55,5 @@
 /// Directives Custom Styles
 // @use 'balm-ui/directives/ripple/ui-ripple';
 // @use 'balm-ui/directives/shape/ui-shape';
+
+@use 'reset';

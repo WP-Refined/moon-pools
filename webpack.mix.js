@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const path = require('path');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ mix.webpackConfig({
             'balm-ui-plus': 'balm-ui/dist/balm-ui-plus.js',
             'balm-ui-css': 'balm-ui/dist/balm-ui.css',
         },
+    },
+    watchOptions: {
+        ignored: /node_modules/,
     },
 });
 

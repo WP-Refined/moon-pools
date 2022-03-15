@@ -2,12 +2,12 @@ require('./bootstrap');
 
 import { createApp } from 'vue';
 
-import DashboardLayout from './Pages/Dashboard/DashboardLayout.vue';
+import Dashboard from './pages/Dashboard.vue';
 import BalmUI from 'balm-ui';
 
 createApp({
     components: {
-        DashboardLayout,
+        Dashboard,
         BalmUI,
     },
 })

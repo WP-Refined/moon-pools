@@ -16,6 +16,7 @@ module.exports = {
     rules: {
         'vue/no-unused-vars': 'error',
         'no-console': 'error',
+        'vue/multi-word-component-names': 0,
         '@typescript-eslint/no-explicit-any': 0,
     },
     ignorePatterns: ['node_modules', 'public/js/*'],

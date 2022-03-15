@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Cardano Insights</title>
+        <title>Moon Pools</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
     </head>
     <body>
         <div id="app">
-            <dashboard-layout></dashboard-layout>
+            <dashboard></dashboard>
         </div>
     </body>
     <script src="{{ asset('js/manifest.js') }}"></script>
