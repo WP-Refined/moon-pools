@@ -73,20 +73,13 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-interface State {
-    appBarTitle: string;
-    openSidebar: boolean;
-}
-
-export default defineComponent({
-    data(): State {
+<script>
+export default {
+    data() {
         return {
             appBarTitle: 'Moon Pools',
             openSidebar: false,
         };
     },
-});
+};
 </script>

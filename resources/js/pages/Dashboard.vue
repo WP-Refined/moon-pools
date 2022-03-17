@@ -19,26 +19,21 @@
     </app-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script>
 import AppLayout from '../components/Layout/AppLayout.vue';
 import PoolsTable from '../components/Pools/PoolsTable.vue';
 import Insights from '../components/Reports/Insights.vue';
 
-interface State {
-    activeTab: number;
-}
-
-export default defineComponent({
+export default {
     components: {
         AppLayout,
         PoolsTable,
         Insights,
     },
-    data(): State {
+    data() {
         return {
             activeTab: 0,
         };
     },
-});
+};
 </script>

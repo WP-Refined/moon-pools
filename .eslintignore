@@ -10,3 +10,5 @@ lang
 public
 node_modules
 webpack.mix.js
+resources/js/main.js
+resources/js/bootstrap.js

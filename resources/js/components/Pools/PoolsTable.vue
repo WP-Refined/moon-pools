@@ -38,16 +38,10 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import type { Pool } from './types/Pool';
-import type {
-    DataTableThead,
-    DataTableTbody,
-} from '../../shared/types/DataTable';
+<script>
 import PoolSearch from './PoolSearch.vue';
 
-const TABLE_HEADERS: DataTableThead[] = [
+const TABLE_HEADERS = [
     {
         value: 'Details',
     },
@@ -71,7 +65,7 @@ const TABLE_HEADERS: DataTableThead[] = [
     },
 ];
 
-const TABLE_FIELDS: DataTableTbody[] = [
+const TABLE_FIELDS = [
     {
         width: 100,
         slot: 'actions',
@@ -82,13 +76,13 @@ const TABLE_FIELDS: DataTableTbody[] = [
     },
     {
         field: 'roa',
-        fn: (data: Pool) => {
+        fn: data => {
             return data.roa + '%';
         },
     },
     {
         field: 'saturation',
-        fn: (data: Pool) => {
+        fn: data => {
             return data.saturation + 'm / 64m';
         },
     },
@@ -100,7 +94,7 @@ const TABLE_FIELDS: DataTableTbody[] = [
     },
 ];
 
-export default defineComponent({
+export default {
     components: {
         PoolSearch,
     },
@@ -171,7 +165,7 @@ export default defineComponent({
                     fees: 87,
                     luck: 4.9,
                 },
-            ] as Pool[],
+            ],
             thead: TABLE_HEADERS,
             tbody: TABLE_FIELDS,
             selectedRows: [],
@@ -182,14 +176,14 @@ export default defineComponent({
     },
 
     methods: {
-        show(data: any) {
+        show(data) {
             alert(JSON.stringify(data));
         },
-        onPage(page: Event) {
+        onPage(page) {
             alert('Page change to ' + page);
         },
     },
-});
+};
 </script>
 
 <style lang="scss" scoped>

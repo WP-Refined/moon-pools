@@ -3,21 +3,11 @@ module.exports = {
         node: true,
     },
     parser: 'vue-eslint-parser',
-    parserOptions: {
-        parser: '@typescript-eslint/parser',
-    },
-    plugins: ['@typescript-eslint'],
-    extends: [
-        'eslint:recommended',
-        'plugin:vue/vue3-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'prettier',
-    ],
+    extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
     rules: {
         'vue/no-unused-vars': 'error',
-        'no-console': 'error',
+        'no-console': ['error', { allow: ['warn', 'error'] }],
         'vue/multi-word-component-names': 0,
-        '@typescript-eslint/no-explicit-any': 0,
     },
     ignorePatterns: ['node_modules', 'public/js/*'],
 };

@@ -13,16 +13,9 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import type { Insight } from './types/Insight';
-
-interface State {
-    availableInsights: Insight[];
-}
-
-export default defineComponent({
-    data(): State {
+<script>
+export default {
+    data() {
         return {
             availableInsights: [
                 {
@@ -33,8 +26,8 @@ export default defineComponent({
                     value: 2,
                     label: 'Total Staked ADA',
                 },
-            ] as Insight[],
+            ],
         };
     },
-});
+};
 </script>

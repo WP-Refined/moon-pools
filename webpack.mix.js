@@ -1,6 +1,5 @@
 const mix = require('laravel-mix');
 const path = require('path');
-require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -19,9 +18,6 @@ mix.webpackConfig({
         modules: ['node_modules'],
         alias: {
             '@': path.resolve('resources/js'),
-            '@shared': path.resolve(__dirname, 'resources/js/Shared'),
-            'balm-ui-plus': 'balm-ui/dist/balm-ui-plus.js',
-            'balm-ui-css': 'balm-ui/dist/balm-ui.css',
         },
     },
     watchOptions: {
@@ -29,6 +25,6 @@ mix.webpackConfig({
     },
 });
 
-mix.ts('resources/js/main.ts', 'public/js').vue({ version: 3 });
+mix.js('resources/js/main.js', 'public/js').vue({ version: 3 });
 mix.sass('resources/scss/main.scss', 'public/css');
-mix.extract(['vue']);
+mix.extract(['vue', 'axios']);

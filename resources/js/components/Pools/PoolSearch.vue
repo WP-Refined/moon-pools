@@ -13,10 +13,8 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script>
+export default {
     emits: ['search'],
     data() {
         return {
@@ -25,10 +23,10 @@ export default defineComponent({
         };
     },
     methods: {
-        onSearch: (event: Event) => {
-            // this.$emit('search', event);
-            // this.$data.poolFilter;
+        onSearch: event => {
+            this.$emit('search', event);
+            // this.$data.poolFilter
         },
     },
-});
+};
 </script>

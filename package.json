@@ -22,8 +22,6 @@
         ]
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.13.0",
-        "@typescript-eslint/parser": "^5.13.0",
         "autoprefixer": "^10.4.2",
         "axios": "^0.25",
         "eslint": "^8.10.0",
@@ -32,7 +30,6 @@
         "flatpickr": "^4.6.9",
         "husky": "^7.0.4",
         "laravel-mix": "^6.0.0-beta.17",
-        "laravel-mix-purgecss": "^6.0.0",
         "lint-staged": "^12.3.4",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -41,9 +38,8 @@
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0",
         "tailwindcss": "^3.0.23",
-        "ts-loader": "^9.2.7",
-        "typescript": "^4.5.5",
         "vue-loader": "^16.8.3",
+        "vue3-charts": "^1.1.31",
         "webpack": "^5.23.0",
         "webpack-cli": "^4.9.2"
     },
