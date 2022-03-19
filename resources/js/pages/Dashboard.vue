@@ -1,7 +1,7 @@
 <template>
     <app-layout>
         <template #content>
-            <insights />
+            <total-staked-ada />
 
             <ui-tab-bar v-model="activeTab" class="hero-demo-tab-bar">
                 <ui-tab> Pools </ui-tab>
@@ -22,13 +22,13 @@
 <script>
 import AppLayout from '../components/Layout/AppLayout.vue';
 import PoolsTable from '../components/Pools/PoolsTable.vue';
-import Insights from '../components/Reports/Insights.vue';
+import TotalStakedAda from '../components/Reports/charts/TotalStakedAda.vue';
 
 export default {
     components: {
         AppLayout,
         PoolsTable,
-        Insights,
+        TotalStakedAda,
     },
     data() {
         return {

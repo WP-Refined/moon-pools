@@ -9,12 +9,20 @@
             >
             </ui-select>
         </div>
-        <div class="graph">// graph</div>
+        <div class="graph--container">
+            <total-staked-ada />
+        </div>
     </div>
 </template>
 
 <script>
+import TotalStakedAda from './charts/TotalStakedAda.vue';
+
 export default {
+    components: {
+        TotalStakedAda,
+    },
+
     data() {
         return {
             availableInsights: [
