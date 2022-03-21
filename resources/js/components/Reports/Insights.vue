@@ -1,15 +1,15 @@
 <template>
-    <div class="mx-2">
-        <div class="my-5">
-            <ui-select
-                icon="trending_up"
-                :options="availableInsights"
-                :fullwidth="true"
-                outlined
+    <div class="mt-5">
+        <div class="text-center">
+            <h6 class="font-semibold m-0 text-slate-400">Total ADA Staked</h6>
+            <h3
+                class="font-light text-4xl mt-1 mb-1"
+                style="font-family: 'Nunito'"
             >
-            </ui-select>
+                $20.64b
+            </h3>
         </div>
-        <div class="graph--container">
+        <div class="mt-3">
             <total-staked-ada />
         </div>
     </div>

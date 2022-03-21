@@ -1,9 +1,9 @@
 <template>
-    <div class="mt-5 mp-chart">
+    <div class="mp-chart">
         <trend-chart
             :datasets="dataset"
             :min="0"
-            padding="0"
+            padding="5 0 0 0"
             :interactive="true"
             @mouse-move="onMouseMove"
         />
@@ -62,6 +62,7 @@ export default {
                             day: '2022-03-18',
                         },
                     ],
+                    smooth: true,
                     showPoints: true,
                     fill: true,
                     className: `curve-vue`,
@@ -94,7 +95,7 @@ export default {
 
     .vtc {
         width: 100%;
-        height: 200px;
+        height: 150px;
     }
     .stroke {
         stroke-width: 2;

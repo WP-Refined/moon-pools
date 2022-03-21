@@ -14,17 +14,28 @@
 .right-0{
   right: 0px;
 }
+.m-0{
+  margin: 0px;
+}
 .mx-2{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-.my-5{
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+.mt-5{
+  margin-top: 1.25rem;
+}
+.mt-1{
+  margin-top: 0.25rem;
+}
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+.mt-3{
+  margin-top: 0.75rem;
 }
 .ml-1{
   margin-left: 0.25rem;
@@ -52,9 +63,6 @@
 }
 .-mt-px{
   margin-top: -1px;
-}
-.mt-5{
-  margin-top: 1.25rem;
 }
 .flex{
   display: flex;
@@ -98,9 +106,6 @@
 .max-w-6xl{
   max-width: 72rem;
 }
-.flex-shrink{
-  flex-shrink: 1;
-}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -109,9 +114,6 @@
 }
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.flex-wrap{
-  flex-wrap: wrap;
 }
 .items-center{
   align-items: center;
@@ -161,6 +163,10 @@
 .text-center{
   text-align: center;
 }
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -172,8 +178,15 @@
 .font-semibold{
   font-weight: 600;
 }
+.font-light{
+  font-weight: 300;
+}
 .leading-7{
   line-height: 1.75rem;
+}
+.text-slate-400{
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 .text-gray-200{
   --tw-text-opacity: 1;

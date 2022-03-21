@@ -24,7 +24,7 @@
                     <div class="ticker">{{ data.ticker }}</div>
                 </template>
                 <template #actions="{ data }">
-                    <ui-fab mini icon="add" @click="show(data)" />
+                    <ui-fab mini icon="add" @click="showPoolModal(data)" />
                 </template>
 
                 <ui-pagination
@@ -35,11 +35,18 @@
                 ></ui-pagination>
             </ui-table>
         </div>
+
+        <pool-modal
+            :show-modal="poolModalOpen"
+            :data="poolModalData"
+            @close="closePoolModal"
+        />
     </div>
 </template>
 
 <script>
 import PoolSearch from './PoolSearch.vue';
+import PoolModal from './PoolModal.vue';
 
 const TABLE_HEADERS = [
     {
@@ -97,6 +104,7 @@ const TABLE_FIELDS = [
 export default {
     components: {
         PoolSearch,
+        PoolModal,
     },
     data() {
         return {
@@ -172,12 +180,19 @@ export default {
             page: 1,
             total: 12,
             poolFilter: '',
+            poolModalData: {},
+            poolModalOpen: false,
         };
     },
 
     methods: {
-        show(data) {
-            alert(JSON.stringify(data));
+        showPoolModal(data) {
+            this.$data.poolModalData = { ...data };
+            this.$data.poolModalOpen = true;
+        },
+        closePoolModal() {
+            this.$data.poolModalOpen = false;
+            this.$data.poolModalData = {};
         },
         onPage(page) {
             alert('Page change to ' + page);
