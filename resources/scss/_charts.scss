@@ -1,0 +1,49 @@
+// Wrapper for Moon Pool Trending charts
+.mp-trend-chart {
+    width: 100%;
+    position: relative;
+
+    .vtc {
+        width: 100%;
+        height: 150px;
+    }
+    .stroke {
+        stroke-width: 2;
+    }
+    .fill {
+        opacity: 0.2;
+    }
+    .active-line {
+        stroke: rgba(0, 0, 0, 0.2);
+    }
+    .point {
+        display: none;
+    }
+    .point.is-active {
+        display: block;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(180deg, transparent, 50%, white);
+        position: absolute;
+        bottom: 0px;
+    }
+}
+
+// Trending Curve Chart
+.curve-vue {
+    .stroke {
+        stroke: #39af77;
+    }
+    .fill {
+        fill: #39af77;
+    }
+    .point {
+        fill: #39af77;
+        stroke: #39af77;
+    }
+}
