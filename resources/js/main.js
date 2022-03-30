@@ -6,9 +6,9 @@ import Dashboard from './pages/Dashboard.vue';
 import BalmUI from 'balm-ui';
 
 createApp({
-    components: {
-        Dashboard,
-    },
+  components: {
+    Dashboard,
+  },
 })
-    .use(BalmUI)
-    .mount('#app');
+  .use(BalmUI)
+  .mount('#app');

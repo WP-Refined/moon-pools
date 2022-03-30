@@ -13,16 +13,16 @@ const path = require('path');
  */
 
 mix.webpackConfig({
-    resolve: {
-        symlinks: false,
-        modules: ['node_modules'],
-        alias: {
-            '@': path.resolve('resources/js'),
-        },
+  resolve: {
+    symlinks: false,
+    modules: ['node_modules'],
+    alias: {
+      '@': path.resolve('resources/js'),
     },
-    watchOptions: {
-        ignored: /node_modules/,
-    },
+  },
+  watchOptions: {
+    ignored: /node_modules/,
+  },
 });
 
 mix.js('resources/js/main.js', 'public/js').vue({ version: 3 });

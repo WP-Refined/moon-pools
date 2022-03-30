@@ -12,7 +12,9 @@
         <template #th-roa>
           ROA
           <ui-icon
-            v-tooltip="'Return of ADA based on staking result from last 30 days'"
+            v-tooltip="
+              'Return of ADA based on staking result from last 30 days'
+            "
             aria-describedby="th-cell-1"
           >
             error_outline
@@ -22,7 +24,7 @@
           <div class="ticker">{{ data.ticker }}</div>
         </template>
         <template #actions="{ data }">
-          <ui-fab mini icon="add" @click="showPoolModal(data)"/>
+          <ui-fab mini icon="add" @click="showPoolModal(data)" />
         </template>
 
         <ui-pagination
@@ -185,7 +187,7 @@ export default {
 
   methods: {
     showPoolModal(data) {
-      this.$data.poolModalData = {...data};
+      this.$data.poolModalData = { ...data };
       this.$data.poolModalOpen = true;
     },
     closePoolModal() {

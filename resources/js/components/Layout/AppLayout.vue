@@ -60,7 +60,7 @@
     </ui-drawer>
 
     <div id="content-main">
-      <slot name="content"/>
+      <slot name="content" />
     </div>
 
     <!-- <footer>

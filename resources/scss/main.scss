@@ -2,8 +2,8 @@
 
 // TODO: Find a suitable secondary and update component styles
 @use '@material/theme' as theme-variables with (
-    $primary: #7849f6,
-    $secondary: #7849f6
+  $primary: #7849f6,
+  $secondary: #7849f6
 );
 
 /// Material Icons (order !important)

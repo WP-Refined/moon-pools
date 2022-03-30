@@ -1,12 +1,12 @@
 // Force change the app bar title font/padding
 .mdc-top-app-bar__title {
-    font-family: 'Nunito';
-    padding-left: 0;
+  font-family: 'Nunito';
+  padding-left: 0;
 }
 
 // Increase space behind floating topbar
 @media (max-width: 599px) {
-    .mdc-top-app-bar--fixed-adjust {
-        padding-top: 64px;
-    }
+  .mdc-top-app-bar--fixed-adjust {
+    padding-top: 64px;
+  }
 }
