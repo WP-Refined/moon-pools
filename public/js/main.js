@@ -19046,8 +19046,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,vue__WEBPACK_IMPORTED_MODULE_1__.createApp)({
   components: {
-    Dashboard: _pages_Dashboard_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    BalmUI: balm_ui__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Dashboard: _pages_Dashboard_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 }).use(balm_ui__WEBPACK_IMPORTED_MODULE_3__["default"]).mount('#app');
 

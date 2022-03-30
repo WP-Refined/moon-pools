@@ -8,7 +8,6 @@ import BalmUI from 'balm-ui';
 createApp({
     components: {
         Dashboard,
-        BalmUI,
     },
 })
     .use(BalmUI)
