@@ -7,7 +7,6 @@
     <testsuites>
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
-            <directory suffix="Test.php">./src</directory>
         </testsuite>
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
@@ -16,11 +15,7 @@
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./app</directory>
-            <directory suffix=".php">./src</directory>
         </include>
-        <exclude>
-            <directory>./src/*/Tests</directory>
-        </exclude>
     </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>

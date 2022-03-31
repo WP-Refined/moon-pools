@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Pools\Infrastructure\Models;
+namespace App\Domains\Pools\Infrastructure\Models;
 
 class Pool
 {
