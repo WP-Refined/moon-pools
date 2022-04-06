@@ -3,6 +3,7 @@
 namespace App\Domain\Pools\Application\Commands;
 
 use App\Domain\Pools\Application\Jobs\SyncPoolsJob;
+use App\Domain\Pools\Domain\Coordinators\PoolCoordinator;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Command\Command as ConsoleCommand;
 
@@ -20,7 +21,13 @@ class TriggerPoolSync extends Command
      *
      * @var string
      */
-    protected $description = 'Trigger the pool sync from the Cardano node.';
+    protected $description = 'Manually trigger a pool sync from the Cardano node.';
+
+    public function __construct(
+        private PoolCoordinator $poolCoordinator
+    ) {
+        parent::__construct();
+    }
 
     /**
      * Execute the console command.
@@ -29,7 +36,7 @@ class TriggerPoolSync extends Command
      */
     public function handle(): int
     {
-        $job = new SyncPoolsJob();
+        $job = new SyncPoolsJob($this->poolCoordinator);
 
         dispatch($job);
 

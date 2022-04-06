@@ -3,6 +3,7 @@
 namespace App\Domain\Pools\Application\Jobs;
 
 use App\Domain\Pools\Domain\Coordinators\PoolCoordinator;
+use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -30,6 +31,10 @@ class SyncPoolsJob implements ShouldQueue, ShouldBeUnique
      */
     public function handle()
     {
-        $this->coordinator->syncPoolsFromNode();
+        try {
+            $this->coordinator->syncPoolsFromNode();
+        } catch (Exception $e) {
+            $this->fail($e);
+        }
     }
 }

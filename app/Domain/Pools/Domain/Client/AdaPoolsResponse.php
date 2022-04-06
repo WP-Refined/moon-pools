@@ -7,9 +7,9 @@ use Psr\Http\Message\ResponseInterface;
 
 class AdaPoolsResponse
 {
-    private bool $isSuccess;
-
     private ?array $data;
+
+    private bool $successful;
 
     private ResponseInterface $response;
 
@@ -18,13 +18,8 @@ class AdaPoolsResponse
         $raw = $response->getBody()->getContents();
 
         $this->response = $response;
-        $this->isSuccess = str_starts_with($this->getStatusCode(), 2);
+        $this->successful = str_starts_with($this->getStatusCode(), 2);
         $this->data = LazyCollection::fromJson($raw);
-    }
-
-    public function isSuccess(): bool
-    {
-        return $this->isSuccess;
     }
 
     public function getData(): ?array
@@ -40,5 +35,10 @@ class AdaPoolsResponse
     public function getStatusCode(): int
     {
         return $this->response->getStatusCode();
+    }
+
+    public function isSuccessful(): bool
+    {
+        return $this->successful;
     }
 }
