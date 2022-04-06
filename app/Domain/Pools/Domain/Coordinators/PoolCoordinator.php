@@ -2,34 +2,43 @@
 
 namespace App\Domain\Pools\Domain\Coordinators;
 
-use App\Domain\Pools\Domain\Client\AdaPoolsClient;
-use App\Domains\Pools\Infrastructure\Repository\PoolRepository;
-use Illuminate\Database\DatabaseManager;
-use RuntimeException;
+use App\Domain\Pools\Domain\Services\BlockFrostSyncService;
 
 class PoolCoordinator
 {
     public function __construct(
-        private PoolRepository $poolRepository,
-        private AdaPoolsClient $adaPoolsClient
+        private BlockFrostSyncService $blockFrostSync
     ) {
     }
 
-    public function syncPoolsFromNode()
+    /**
+     * @return void
+     */
+    public function syncPoolsFromBlockFrost(): void
     {
-        // TODO: Call ADA Pools endpoint
+        $poolIds = $this->blockFrostSync->retrievePoolIds();
+        $this->blockFrostSync->updatePoolList($poolIds);
+
+        foreach ($poolIds as $poolId) {
+            $this->blockFrostSync->extractPoolMetaData($poolId);
+        }
+    }
+
+    /* public function syncPoolsFromAdaPools(): void
+    {
         $response = $this->adaPoolsClient->get('/pools.json');
 
-        if ($response->isSuccessful()) {
-            $pools = $response->getData(); // lazy collection of json
-            // $this->poolRepository->updatePools($pools);
+        if (!$response->isSuccessful()) {
+            throw new RuntimeException(
+                sprintf(
+                    'Unexpected error while syncing pools: %s',
+                    $response->getResponse()->getBody()
+                )
+            );
         }
 
-        throw new RuntimeException(
-            sprintf(
-                'Unexpected error while syncing pools: %s',
-                $response->getResponse()->getBody()
-            )
-        );
-    }
+        $pools = $response->getData();
+        // $this->poolRepository->updatePools($pools);
+        // TODO: Incomplete as the data is not well-formatted/easy to consume
+    } */
 }

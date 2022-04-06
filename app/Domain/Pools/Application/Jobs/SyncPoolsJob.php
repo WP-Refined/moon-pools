@@ -32,7 +32,7 @@ class SyncPoolsJob implements ShouldQueue, ShouldBeUnique
     public function handle()
     {
         try {
-            $this->coordinator->syncPoolsFromNode();
+            $this->coordinator->syncPoolsFromBlockFrost();
         } catch (Exception $e) {
             $this->fail($e);
         }

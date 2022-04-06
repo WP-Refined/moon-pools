@@ -3,9 +3,9 @@
 namespace App\Domain\Pools\Application\Controllers;
 
 use App\Domain\Common\Application\Response\ApiResponse;
-use App\Domains\Pools\Infrastructure\Repository\PoolRepository;
-use App\Http\Controllers\Controller;
 use App\Domain\Pools\Application\Requests\FetchPoolsRequest;
+use App\Domain\Pools\Infrastructure\Repository\PoolRepository;
+use App\Http\Controllers\Controller;
 
 class PoolController extends Controller
 {

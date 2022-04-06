@@ -13,8 +13,12 @@ final class ApiResponse extends JsonResponse
      * @param  string  $message
      * @param  int  $statusCode
      */
-    public function __construct(array $data, bool $successful = true, string $message = '', int $statusCode = Response::HTTP_OK)
-    {
+    public function __construct(
+        array $data,
+        bool $successful = true,
+        string $message = '',
+        int $statusCode = Response::HTTP_OK
+    ) {
         parent::__construct([
             'data' => $data,
             'success' => $successful,

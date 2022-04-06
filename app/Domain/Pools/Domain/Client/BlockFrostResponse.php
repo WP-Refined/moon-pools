@@ -6,7 +6,7 @@ use Illuminate\Support\LazyCollection;
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
 
-class AdaPoolsResponse
+class BlockFrostResponse
 {
     private mixed $rawData;
 

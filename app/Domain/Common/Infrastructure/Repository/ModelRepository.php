@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Domain\Common\Infrastructure;
+namespace App\Domain\Common\Infrastructure\Repository;
 
+use App\Domain\Common\Infrastructure\Models\DomainModel;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 
 class ModelRepository
 {
     public function __construct(
-        protected Model|Builder $model
+        protected DomainModel|Builder $model
     ) {
     }
 
@@ -28,9 +28,9 @@ class ModelRepository
      *
      * @param  string|int  $id
      * @param  array  $columns
-     * @return Model|null
+     * @return DomainModel|null
      */
-    public function find(string|int $id, array $columns = ['*']): ?Model
+    public function find(string|int $id, array $columns = ['*']): ?DomainModel
     {
         return $this->model->find($id, $columns);
     }
