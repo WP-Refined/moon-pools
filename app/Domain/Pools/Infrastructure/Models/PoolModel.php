@@ -13,6 +13,8 @@ class PoolModel extends DomainModel
 
     public $incrementing = false;
 
+    public $table = 'pools';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,7 +29,7 @@ class PoolModel extends DomainModel
 
     public function detail(): HasOne
     {
-        return $this->hasOne(PoolDetailModel::class);
+        return $this->hasOne(PoolDetailModel::class, 'id');
     }
 
     public function history(): HasMany

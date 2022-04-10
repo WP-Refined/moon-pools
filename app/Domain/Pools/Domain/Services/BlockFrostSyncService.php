@@ -21,7 +21,7 @@ class BlockFrostSyncService
      */
     public function retrievePoolIds(): array
     {
-        $response = $this->blockFrostClient->get('/pools/extended');
+        $response = $this->blockFrostClient->get('pools/extended');
         if (!$response->isSuccessful()) {
             throw new RuntimeException(
                 sprintf(
@@ -41,8 +41,8 @@ class BlockFrostSyncService
     public function extractPoolMetaData(string $poolId): void
     {
         $extracted = [];
-        $defaultEndpoint = sprintf('/pools/%s', $poolId);
-        $metaDataEndpoint = sprintf('/pools/%s/metadata', $poolId);
+        $defaultEndpoint = sprintf('pools/%s', $poolId);
+        $metaDataEndpoint = sprintf('pools/%s/metadata', $poolId);
 
         // First API call to retrieve the primary pool details
         $poolData = $this->blockFrostClient->get($defaultEndpoint);
@@ -70,12 +70,13 @@ class BlockFrostSyncService
     public function updatePoolList(array $poolIds): void
     {
         collect($poolIds)
-            ->map(function ($poolId) {
+            ->map(function ($pool) {
                 return [
-                    'pool_id' => $poolId,
+                    'id' => $pool['pool_id'],
+                    'pool_hex' => $pool['hex'],
                 ];
             })
-            ->chunk(500)
+            ->chunk(10)
             ->each(function ($poolChunk) {
                 $this->poolRepository->upsertPools($poolChunk);
             });

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PoolDetailModel extends DomainModel
 {
+    public $table = 'pool_detail';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,6 +38,6 @@ class PoolDetailModel extends DomainModel
 
     public function pool(): BelongsTo
     {
-        return $this->belongsTo(PoolModel::class);
+        return $this->belongsTo(PoolModel::class, 'id', 'id');
     }
 }

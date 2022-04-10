@@ -2,10 +2,11 @@
 
 namespace App\Domain\Pools\Application\Controllers;
 
-use App\Domain\Common\Application\Response\ApiResponse;
 use App\Domain\Pools\Application\Requests\FetchPoolsRequest;
+use App\Domain\Pools\Application\Resources\PoolCollection;
 use App\Domain\Pools\Infrastructure\Repository\PoolRepository;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class PoolController extends Controller
 {
@@ -14,14 +15,10 @@ class PoolController extends Controller
     ) {
     }
 
-    public function index(FetchPoolsRequest $request): ApiResponse
+    public function index(FetchPoolsRequest $request): JsonResource
     {
         $pools = $this->poolRepository->findPools($request->get('filter'));
 
-        return new ApiResponse(
-            [
-                'pools' => $pools,
-            ]
-        );
+        return new PoolCollection($pools);
     }
 }

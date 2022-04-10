@@ -13,8 +13,9 @@ class BlockFrostClient
     public function __construct()
     {
         $this->client = new Client([
-            'base_uri' => rtrim(config('gateways.blockfrost.api_url'), '/'),
+            'base_uri' => rtrim(config('gateways.blockfrost.api_url'), '/').'/',
             'headers' => [
+                'Content-Type' => 'application/json',
                 'Cache-Control' => 'no-cache',
                 'project_id' => config('gateways.blockfrost.api_key'),
             ],
@@ -29,7 +30,7 @@ class BlockFrostClient
     public function get(string $uri, array $options = []): BlockFrostResponse
     {
         try {
-            $response = $this->client->get($uri, $options);
+            $response = $this->client->get(ltrim($uri, '/'), $options);
         } catch (GuzzleException|ClientException $e) {
             $response = $e->getResponse();
         }

@@ -5,6 +5,7 @@ namespace App\Domain\Pools\Infrastructure\Repository;
 use App\Domain\Common\Infrastructure\Repository\ModelRepository;
 use App\Domain\Pools\Infrastructure\Models\PoolModel;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 
 class PoolRepository extends ModelRepository
 {
@@ -18,9 +19,14 @@ class PoolRepository extends ModelRepository
         return $this->model->paginate(20);
     }
 
-    public function upsertPools(array $pools, string $uniqueBy = 'pool_id'): int
+    /**
+     * @param  array|Collection  $pools
+     * @param  string  $uniqueBy
+     * @return int
+     */
+    public function upsertPools(array|Collection $pools, string $uniqueBy = 'id'): int
     {
-        return $this->model->upsert($pools, $uniqueBy);
+        return $this->model->upsert(!is_array($pools) ? $pools->toArray() : $pools, $uniqueBy);
     }
 
     public function updatePoolMetaData(string $poolId, $metaData)

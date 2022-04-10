@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PoolHistoryModel extends DomainModel
 {
+    public $table = 'pool_history';
+
     /**
      * The attributes that are mass assignable.
      *

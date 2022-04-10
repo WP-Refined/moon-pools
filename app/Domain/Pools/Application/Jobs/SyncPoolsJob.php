@@ -15,24 +15,19 @@ class SyncPoolsJob implements ShouldQueue, ShouldBeUnique
     use Dispatchable, InteractsWithQueue, Queueable;
 
     /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
-    public function __construct(
-        private PoolCoordinator $coordinator
-    ) {
-    }
-
-    /**
      * Execute the job.
      *
      * @return void
      */
-    public function handle()
+    public function handle(PoolCoordinator $coordinator)
     {
+        // Ensure that sync is enabled for the current deployment
+        if (!config('gateways.blockfrost.sync_enabled')) {
+            return;
+        }
+
         try {
-            $this->coordinator->syncPoolsFromBlockFrost();
+            $coordinator->syncPoolsFromBlockFrost();
         } catch (Exception $e) {
             $this->fail($e);
         }

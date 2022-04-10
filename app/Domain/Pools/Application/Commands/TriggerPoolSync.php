@@ -36,9 +36,7 @@ class TriggerPoolSync extends Command
      */
     public function handle(): int
     {
-        $job = new SyncPoolsJob($this->poolCoordinator);
-
-        dispatch($job);
+        (new SyncPoolsJob())->handle($this->poolCoordinator);
 
         return ConsoleCommand::SUCCESS;
     }
