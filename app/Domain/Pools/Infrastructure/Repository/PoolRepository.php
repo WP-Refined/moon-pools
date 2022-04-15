@@ -14,23 +14,27 @@ class PoolRepository extends ModelRepository
         parent::__construct($model);
     }
 
-    public function findPools(?string $filter): LengthAwarePaginator
+    /**
+     * @param  string|null  $filter
+     * @return LengthAwarePaginator
+     */
+    public function findPools(string $filter = null): LengthAwarePaginator
     {
         return $this->model->paginate(20);
     }
 
     /**
-     * @param  array|Collection  $pools
+     * @param  array|Collection  $poolData
      * @param  string  $uniqueBy
      * @return int
      */
-    public function upsertPools(array|Collection $pools, string $uniqueBy = 'id'): int
+    public function upsert(array|Collection $poolData, string $uniqueBy = 'id'): int
     {
-        return $this->model->upsert(!is_array($pools) ? $pools->toArray() : $pools, $uniqueBy);
-    }
-
-    public function updatePoolMetaData(string $poolId, $metaData)
-    {
-        //
+        return $this->model->upsert(
+            !is_array($poolData)
+                ? $poolData->toArray()
+                : $poolData,
+            $uniqueBy
+        );
     }
 }

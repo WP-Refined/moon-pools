@@ -13,6 +13,8 @@ class PoolModel extends DomainModel
 
     public $incrementing = false;
 
+    public $keyType = 'string';
+
     public $table = 'pools';
 
     /**

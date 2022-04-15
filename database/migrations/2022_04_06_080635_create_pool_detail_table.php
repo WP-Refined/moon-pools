@@ -43,6 +43,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('pool_metadata');
+        Schema::dropIfExists('pool_detail');
     }
 };

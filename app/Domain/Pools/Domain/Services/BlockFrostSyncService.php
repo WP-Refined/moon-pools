@@ -40,7 +40,9 @@ class BlockFrostSyncService
      */
     public function extractPoolMetaData(string $poolId): void
     {
-        $extracted = [];
+        $extracted = [
+            'id' => $poolId,
+        ];
         $defaultEndpoint = sprintf('pools/%s', $poolId);
         $metaDataEndpoint = sprintf('pools/%s/metadata', $poolId);
 
@@ -58,7 +60,7 @@ class BlockFrostSyncService
 
         // Assume that if a request returns no data or fails at this point
         // we just need to try again in the next cron run
-        $this->poolRepository->updatePoolMetaData($poolId, $extracted);
+        $this->poolRepository->upsert($extracted);
     }
 
     /**
@@ -76,9 +78,16 @@ class BlockFrostSyncService
                     'pool_hex' => $pool['hex'],
                 ];
             })
-            ->chunk(10)
+            ->chunk(50)
             ->each(function ($poolChunk) {
-                $this->poolRepository->upsertPools($poolChunk);
+                $result = $this->poolRepository->upsert($poolChunk->toArray());
+
+                if (!$result) {
+                    throw new RuntimeException(sprintf(
+                        'Unexpected error while syncing pool chunk: %s',
+                        $poolChunk->toJson()
+                    ));
+                }
             });
     }
 }

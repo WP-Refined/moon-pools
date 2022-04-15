@@ -2,7 +2,6 @@
 
 namespace App\Domain\Pools\Domain\Client;
 
-use Illuminate\Support\LazyCollection;
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -29,11 +28,6 @@ class BlockFrostResponse
             // TODO: Log exception in error channels
             return [];
         }
-    }
-
-    public function getLazyCollection(): LazyCollection
-    {
-        return LazyCollection::fromJson($this->rawData);
     }
 
     public function getResponse(): ResponseInterface

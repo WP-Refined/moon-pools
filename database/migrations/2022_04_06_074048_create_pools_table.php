@@ -13,10 +13,10 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('pools', function (Blueprint $table) {
-            $table->string('id', 50)->primary(); // Bech 32 Pool ID
-            $table->string('pool_hex', 50)->nullable();
-            $table->integer('retiring_epoch')->nullable();
-            $table->integer('retired_epoch')->nullable();
+            $table->string('id', 100)->primary(); // Bech 32 Pool ID
+            $table->string('pool_hex', 100)->nullable();
+            $table->integer('retiring_epoch')->unsigned()->nullable();
+            $table->integer('retired_epoch')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
