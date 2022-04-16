@@ -16,12 +16,11 @@ class PoolCoordinator
      */
     public function syncPoolsFromBlockFrost(): void
     {
-        $poolIds = $this->blockFrostSync->retrievePoolIds();
-        $this->blockFrostSync->updatePoolList($poolIds);
-        dd('poolIds', $poolIds);
+        $pools = $this->blockFrostSync->retrievePools();
+        $this->blockFrostSync->updatePoolList($pools);
 
-        foreach ($poolIds as $poolId) {
-            $this->blockFrostSync->extractPoolMetaData($poolId);
+        foreach ($pools as $pool) {
+            $this->blockFrostSync->extractPoolMetaData($pool['pool_id']);
         }
     }
 

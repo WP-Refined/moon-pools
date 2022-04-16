@@ -15,7 +15,12 @@ class PoolDetailModel extends DomainModel
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
+        'ticker',
+        'description',
+        'website',
+        'ref_url',
         'hex',
         'vrf_key',
         'blocks_minted',
