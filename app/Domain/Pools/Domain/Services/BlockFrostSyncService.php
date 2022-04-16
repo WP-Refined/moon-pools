@@ -3,6 +3,8 @@
 namespace App\Domain\Pools\Domain\Services;
 
 use App\Domain\Pools\Domain\Client\BlockFrostClient;
+use App\Domain\Pools\Domain\DTO\PoolDetailDto;
+use App\Domain\Pools\Domain\DTO\PoolDto;
 use App\Domain\Pools\Infrastructure\Repository\PoolRepository;
 use RuntimeException;
 
@@ -17,7 +19,7 @@ class BlockFrostSyncService
     /**
      * Retrieve an array of Pools we can track internally
      *
-     * @return array
+     * @return PoolDto[]
      */
     public function retrievePools(): array
     {
@@ -31,7 +33,14 @@ class BlockFrostSyncService
             );
         }
 
-        return $response->getData();
+        $pools = [];
+        foreach ($response->getData() as $poolData) {
+            $pools[] = (new PoolDto())
+                ->setId($poolData['pool_id'])
+                ->setPoolHex($poolData['hex']);
+        }
+
+        return $pools;
     }
 
     /**
@@ -43,38 +52,60 @@ class BlockFrostSyncService
      */
     public function extractPoolMetaData(string $poolId, bool $includeMetaData = true): void
     {
-        $extracted = [
-            'id' => $poolId,
-        ];
+        $poolDetailDto = new PoolDetailDto();
         $defaultEndpoint = sprintf('pools/%s', $poolId);
         $metaDataEndpoint = sprintf('pools/%s/metadata', $poolId);
 
         // First API call to retrieve the primary pool details
-        $poolData = $this->blockFrostClient->get($defaultEndpoint);
-        if ($poolData->isSuccessful()) {
-            $extracted = array_merge($extracted, $poolData->getData());
+        $poolResponse = $this->blockFrostClient->get($defaultEndpoint);
+        if ($poolResponse->isSuccessful()) {
+            $poolData = $poolResponse->getData();
+            $poolDetailDto
+                ->setId($poolId)
+                ->setHex($poolData['hex'])
+                ->setVrfKey($poolData['vrf_key'])
+                ->setBlocksMinted($poolData['blocks_minted'])
+                ->setBlocksEpoch($poolData['blocks_epoch'])
+                ->setLiveStake($poolData['live_stake'])
+                ->setLiveSize($poolData['live_size'])
+                ->setLiveSaturation($poolData['live_saturation'])
+                ->setLiveDelegators($poolData['live_delegators'])
+                ->setActiveStake($poolData['active_stake'])
+                ->setActiveSize($poolData['active_size'])
+                ->setDeclaredPledge($poolData['declared_pledge'])
+                ->setLivePledge($poolData['live_pledge'])
+                ->setMarginCost($poolData['margin_cost'])
+                ->setFixedCost($poolData['fixed_cost'])
+                ->setRewardAccount($poolData['reward_account'])
+                ->setOwners($poolData['owners'])
+                ->setRegistration($poolData['registration'])
+                ->setRetirement($poolData['retirement']);
         }
 
         // Limit metadata fetch as required (data returned is not updated as frequently)
         if ($includeMetaData) {
             // Second API call to retrieve missing metadata (name, website etc.)
-            $metaData = $this->blockFrostClient->get($metaDataEndpoint);
-            if ($metaData->isSuccessful()) {
-                $extracted = array_merge($extracted, $metaData->getData());
+            $metaResponse = $this->blockFrostClient->get($metaDataEndpoint);
+            if ($metaResponse->isSuccessful()) {
+                $metaData = $metaResponse->getData();
+                $poolDetailDto
+                    ->setName($metaData['name'])
+                    ->setTicker($metaData['ticker'])
+                    ->setDescription($metaData['description'])
+                    ->setWebsite($metaData['homepage'])
+                    ->setRefUrl($metaData['url'])
+                    ->setRefHash($metaData['hash']);
             }
         }
 
-        // Transform the extracted data we received
-        $extracted = $this->mapExtractedMetaData($extracted, $includeMetaData);
-
         // Assume that if a request returns no data or fails at this point
         // we just need to try again in the next cron run
-        $result = $this->poolRepository->upsert($extracted);
+        $result = $this->poolRepository->upsert($poolDetailDto->toArray(true));
 
         if (!$result) {
             throw new RuntimeException(sprintf(
                 'Unexpected error while syncing pool metadata: %s',
-                json_encode($extracted)
+                json_encode($poolDetailDto->toArray())
             ));
         }
     }
@@ -82,16 +113,16 @@ class BlockFrostSyncService
     /**
      * Create batches of pools to insert/update in the database
      *
-     * @param  array  $poolIds
+     * @param  PoolDto[]  $pools
      * @return void
      */
-    public function updatePoolList(array $poolIds): void
+    public function updatePoolList(array $pools): void
     {
-        collect($poolIds)
+        collect($pools)
             ->map(function ($pool) {
                 return [
-                    'id' => $pool['pool_id'],
-                    'pool_hex' => $pool['hex'],
+                    'id' => $pool->getId(),
+                    'pool_hex' => $pool->getPoolHex(),
                 ];
             })
             ->chunk(50)
@@ -105,43 +136,5 @@ class BlockFrostSyncService
                     ));
                 }
             });
-    }
-
-    // TODO: Replace with a PoolDetailDto
-    private function mapExtractedMetaData(array $extracted, bool $includeMetaData = true): array
-    {
-        $availableData = [];
-
-        if ($includeMetaData) {
-            $availableData = [
-                'name' => $extracted['name'],
-                'ticker' => $extracted['ticker'],
-                'description' => $extracted['description'],
-                'website' => $extracted['homepage'],
-                'ref_url' => $extracted['url'],
-            ];
-        }
-
-        return array_merge($availableData, [
-            'id' => $extracted['id'],
-            'hex' => $extracted['hex'],
-            'vrf_key' => $extracted['vrf_key'],
-            'blocks_minted' => $extracted['blocks_minted'],
-            'blocks_epoch' => $extracted['blocks_epoch'],
-            'live_stake' => $extracted['live_stake'],
-            'live_size' => $extracted['live_size'],
-            'live_saturation' => $extracted['live_saturation'],
-            'live_delegators' => $extracted['live_delegators'],
-            'active_stake' => $extracted['active_stake'],
-            'active_size' => $extracted['active_size'],
-            'declared_pledge' => $extracted['declared_pledge'],
-            'live_pledge' => $extracted['live_pledge'],
-            'margin_cost' => $extracted['margin_cost'],
-            'fixed_cost' => $extracted['fixed_cost'],
-            'reward_account' => $extracted['reward_account'],
-            'owners' => json_encode($extracted['owners']), // collection/json
-            'registration' => json_encode($extracted['registration']), // collection/json
-            'retirement' => json_encode($extracted['retirement']), // collection/json
-        ]);
     }
 }

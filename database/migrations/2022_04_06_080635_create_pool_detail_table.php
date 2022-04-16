@@ -13,13 +13,14 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('pool_detail', function (Blueprint $table) {
-            $table->string('id', 50)->primary(); // Bech 32 Pool ID
-            $table->string('hex', 50)->nullable();
+            $table->string('id', 100)->primary(); // Bech 32 Pool ID
+            $table->string('hex', 100)->nullable();
             $table->string('name');
             $table->string('ticker', 10);
             $table->string('description');
             $table->string('website');
             $table->string('ref_url');
+            $table->string('ref_hash');
             $table->string('vrf_key');
             $table->integer('blocks_minted');
             $table->integer('blocks_epoch');

@@ -20,7 +20,8 @@ class PoolCoordinator
         $this->blockFrostSync->updatePoolList($pools);
 
         foreach ($pools as $pool) {
-            $this->blockFrostSync->extractPoolMetaData($pool['pool_id']);
+            $this->blockFrostSync->extractPoolMetaData($pool->getId());
+            dd('success');
         }
     }
 
