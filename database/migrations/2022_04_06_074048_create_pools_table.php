@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('pools', function (Blueprint $table) {
             $table->string('id', 100)->primary(); // Bech 32 Pool ID
-            $table->string('pool_hex', 100)->nullable();
+            $table->string('hex', 100)->nullable();
             $table->integer('retiring_epoch')->unsigned()->nullable();
             $table->integer('retired_epoch')->unsigned()->nullable();
             $table->timestamps();

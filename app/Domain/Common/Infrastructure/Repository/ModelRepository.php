@@ -4,6 +4,7 @@ namespace App\Domain\Common\Infrastructure\Repository;
 
 use App\Domain\Common\Infrastructure\Models\DomainModel;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 
 class ModelRepository
@@ -33,5 +34,20 @@ class ModelRepository
     public function find(string|int $id, array $columns = ['*']): ?DomainModel
     {
         return $this->model->find($id, $columns);
+    }
+
+    /**
+     * @param  array|Collection  $poolData
+     * @param  string  $uniqueBy
+     * @return int
+     */
+    public function upsert(array|Collection $poolData, string $uniqueBy = 'id'): int
+    {
+        return $this->model->upsert(
+            !is_array($poolData)
+                ? $poolData->toArray()
+                : $poolData,
+            $uniqueBy
+        );
     }
 }

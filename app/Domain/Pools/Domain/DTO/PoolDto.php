@@ -8,7 +8,7 @@ class PoolDto extends DomainDto
 {
     private string $id;
 
-    private string $pool_hex;
+    private string $hex;
 
     private ?int $retiring_epoch = null;
 
@@ -35,18 +35,18 @@ class PoolDto extends DomainDto
     /**
      * @return string
      */
-    public function getPoolHex(): string
+    public function getHex(): string
     {
-        return $this->pool_hex;
+        return $this->hex;
     }
 
     /**
-     * @param  string  $pool_hex
+     * @param  string  $hex
      * @return PoolDto
      */
-    public function setPoolHex(string $pool_hex): PoolDto
+    public function setHex(string $hex): PoolDto
     {
-        $this->pool_hex = $pool_hex;
+        $this->hex = $hex;
         return $this;
     }
 
@@ -90,7 +90,7 @@ class PoolDto extends DomainDto
     {
         return [
             'id' => $this->getId(),
-            'pool_hex' => $this->getPoolHex(),
+            'hex' => $this->getHex(),
             'retiring_epoch' => $this->getRetiringEpoch(),
             'retired_epoch' => $this->getRetiredEpoch(),
         ];

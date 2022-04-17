@@ -5,6 +5,7 @@ namespace App\Domain\Pools\Domain\Services;
 use App\Domain\Pools\Domain\Client\BlockFrostClient;
 use App\Domain\Pools\Domain\DTO\PoolDetailDto;
 use App\Domain\Pools\Domain\DTO\PoolDto;
+use App\Domain\Pools\Infrastructure\Repository\PoolDetailRepository;
 use App\Domain\Pools\Infrastructure\Repository\PoolRepository;
 use RuntimeException;
 
@@ -12,6 +13,7 @@ class BlockFrostSyncService
 {
     public function __construct(
         private PoolRepository $poolRepository,
+        private PoolDetailRepository $poolDetailRepository,
         private BlockFrostClient $blockFrostClient
     ) {
     }
@@ -37,31 +39,31 @@ class BlockFrostSyncService
         foreach ($response->getData() as $poolData) {
             $pools[] = (new PoolDto())
                 ->setId($poolData['pool_id'])
-                ->setPoolHex($poolData['hex']);
+                ->setHex($poolData['hex']);
         }
 
         return $pools;
     }
 
     /**
-     * Fetch and upsert a single Pools metadata
+     * Fetch and upsert a single Pools data
      *
      * @param  string  $poolId
      * @param  bool  $includeMetaData  Data is not frequently updated. Set to false to improve request quota.
      * @return void
      */
-    public function extractPoolMetaData(string $poolId, bool $includeMetaData = true): void
-    {
+    public function extractPoolData(
+        string $poolId,
+        bool $includeMetaData = true
+    ): void {
         $poolDetailDto = new PoolDetailDto();
-        $defaultEndpoint = sprintf('pools/%s', $poolId);
-        $metaDataEndpoint = sprintf('pools/%s/metadata', $poolId);
+        $poolDetailDto->setId($poolId);
 
         // First API call to retrieve the primary pool details
-        $poolResponse = $this->blockFrostClient->get($defaultEndpoint);
+        $poolResponse = $this->blockFrostClient->get(sprintf('pools/%s', $poolId));
         if ($poolResponse->isSuccessful()) {
             $poolData = $poolResponse->getData();
             $poolDetailDto
-                ->setId($poolId)
                 ->setHex($poolData['hex'])
                 ->setVrfKey($poolData['vrf_key'])
                 ->setBlocksMinted($poolData['blocks_minted'])
@@ -84,23 +86,48 @@ class BlockFrostSyncService
 
         // Limit metadata fetch as required (data returned is not updated as frequently)
         if ($includeMetaData) {
-            // Second API call to retrieve missing metadata (name, website etc.)
-            $metaResponse = $this->blockFrostClient->get($metaDataEndpoint);
-            if ($metaResponse->isSuccessful()) {
-                $metaData = $metaResponse->getData();
-                $poolDetailDto
-                    ->setName($metaData['name'])
-                    ->setTicker($metaData['ticker'])
-                    ->setDescription($metaData['description'])
-                    ->setWebsite($metaData['homepage'])
-                    ->setRefUrl($metaData['url'])
-                    ->setRefHash($metaData['hash']);
-            }
+            $this->extractPoolMetaData($poolId);
         }
 
         // Assume that if a request returns no data or fails at this point
         // we just need to try again in the next cron run
-        $result = $this->poolRepository->upsert($poolDetailDto->toArray(true));
+        $result = $this->poolDetailRepository->upsert($poolDetailDto->toPoolArray(true));
+
+        if (!$result) {
+            throw new RuntimeException(sprintf(
+                'Unexpected error while syncing pool data: %s',
+                json_encode($poolDetailDto->toArray())
+            ));
+        }
+    }
+
+    /**
+     * Fetch and upsert a single Pool Metadata (e.g. Pool name, socials etc.)
+     *
+     * @param  string  $poolId
+     * @return void
+     */
+    public function extractPoolMetaData(string $poolId)
+    {
+        $poolDetailDto = new PoolDetailDto();
+        $poolDetailDto->setId($poolId);
+
+        // Second API call to retrieve missing metadata (name, website etc.)
+        $metaResponse = $this->blockFrostClient->get(sprintf('pools/%s/metadata', $poolId));
+        if ($metaResponse->isSuccessful()) {
+            $metaData = $metaResponse->getData();
+            $poolDetailDto
+                ->setName($metaData['name'])
+                ->setTicker($metaData['ticker'])
+                ->setDescription($metaData['description'])
+                ->setWebsite($metaData['homepage'])
+                ->setRefUrl($metaData['url'])
+                ->setRefHash($metaData['hash']);
+        }
+
+        // Assume that if a request returns no data or fails at this point
+        // we just need to try again in the next cron run
+        $result = $this->poolDetailRepository->upsert($poolDetailDto->toMetaArray());
 
         if (!$result) {
             throw new RuntimeException(sprintf(
@@ -122,7 +149,7 @@ class BlockFrostSyncService
             ->map(function ($pool) {
                 return [
                     'id' => $pool->getId(),
-                    'pool_hex' => $pool->getPoolHex(),
+                    'hex' => $pool->getHex(),
                 ];
             })
             ->chunk(50)

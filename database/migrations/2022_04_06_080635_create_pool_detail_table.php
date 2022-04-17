@@ -32,9 +32,9 @@ return new class extends Migration {
             $table->float('active_size', 32, 20);
             $table->string('declared_pledge');
             $table->string('live_pledge');
-            $table->float('margin_cost');
+            $table->float('margin_cost', 32, 20);
             $table->string('fixed_cost'); // NOTE: Implemented as string due to sync with chain
-            $table->string('reward_account');
+            $table->string('reward_account', 100);
             $table->text('owners')->nullable();
             $table->text('registration')->nullable();
             $table->text('retirement')->nullable();

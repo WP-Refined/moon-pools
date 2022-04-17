@@ -2,6 +2,9 @@
 
 namespace App\Domain\Pools\Application\Commands;
 
+use App\Domain\Pools\Application\Jobs\SyncAllPoolDataJob;
+use App\Domain\Pools\Application\Jobs\SyncPoolDetailsJob;
+use App\Domain\Pools\Application\Jobs\SyncPoolMetaDataJob;
 use App\Domain\Pools\Application\Jobs\SyncPoolsJob;
 use App\Domain\Pools\Domain\Coordinators\PoolCoordinator;
 use Illuminate\Console\Command;
@@ -14,7 +17,8 @@ class TriggerPoolSync extends Command
      *
      * @var string
      */
-    protected $signature = 'pools:sync';
+    protected $signature = 'pools:sync 
+                            {type=pools : Type of pools, details, meta, full}';
 
     /**
      * The console command description.
@@ -36,7 +40,20 @@ class TriggerPoolSync extends Command
      */
     public function handle(): int
     {
-        (new SyncPoolsJob())->handle($this->poolCoordinator);
+        switch ($this->argument('type')) {
+            case 'pools':
+                (new SyncPoolsJob())->handle($this->poolCoordinator);
+                break;
+            case 'details':
+                (new SyncPoolDetailsJob())->handle($this->poolCoordinator);
+                break;
+            case 'meta':
+                (new SyncPoolMetaDataJob())->handle($this->poolCoordinator);
+                break;
+            case 'full':
+                (new SyncAllPoolDataJob())->handle($this->poolCoordinator);
+                break;
+        }
 
         return ConsoleCommand::SUCCESS;
     }

@@ -24,7 +24,7 @@ class PoolModel extends DomainModel
      */
     protected $fillable = [
         'id', // Bech 32 Pool ID
-        'pool_hex',
+        'hex',
         'retiring_epoch',
         'retired_epoch',
     ];

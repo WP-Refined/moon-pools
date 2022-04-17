@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 
-class SyncPoolsJob implements ShouldQueue, ShouldBeUnique
+class SyncPoolMetaDataJob implements ShouldQueue, ShouldBeUnique
 {
     use Dispatchable, InteractsWithQueue, Queueable;
 
@@ -27,7 +27,7 @@ class SyncPoolsJob implements ShouldQueue, ShouldBeUnique
         }
 
         try {
-            $coordinator->syncPoolsFromFromBlockFrost();
+            $coordinator->syncPoolMetaDataFromBlockFrost();
         } catch (Exception $e) {
             $this->fail($e);
         }

@@ -17,7 +17,7 @@ class PoolResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'pool_hex' => $this->pool_hex,
+            'hex' => $this->hex,
             'retiring_epoch' => $this->retiring_epoch,
             'retired_epoch' => $this->retired_epoch,
             'detail' => $this->whenLoaded('detail', new PoolDetailResource($this->detail)),

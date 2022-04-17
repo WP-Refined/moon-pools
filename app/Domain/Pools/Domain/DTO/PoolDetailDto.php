@@ -546,4 +546,59 @@ class PoolDetailDto extends DomainDto
                 : $this->retirement,
         ];
     }
+
+    /**
+     * Pool data only array (e.g. staking & block stats)
+     *
+     * @param  bool  $serialiseMeta  Serialise fields that will be stored as json.
+     * @return array
+     */
+    public function toPoolArray(bool $serialiseMeta = false): array
+    {
+        return [
+            'id' => $this->id,
+            'hex' => $this->hex,
+            'vrf_key' => $this->vrf_key,
+            'blocks_minted' => $this->blocks_minted,
+            'blocks_epoch' => $this->blocks_epoch,
+            'live_stake' => $this->live_stake,
+            'live_size' => $this->live_size,
+            'live_saturation' => $this->live_saturation,
+            'live_delegators' => $this->live_delegators,
+            'active_stake' => $this->active_stake,
+            'active_size' => $this->active_size,
+            'declared_pledge' => $this->declared_pledge,
+            'live_pledge' => $this->live_pledge,
+            'margin_cost' => $this->margin_cost,
+            'fixed_cost' => $this->fixed_cost,
+            'reward_account' => $this->reward_account,
+            'owners' => $serialiseMeta
+                ? json_encode($this->owners)
+                : $this->owners,
+            'registration' => $serialiseMeta
+                ? json_encode($this->registration)
+                : $this->registration,
+            'retirement' => $serialiseMeta
+                ? json_encode($this->retirement)
+                : $this->retirement,
+        ];
+    }
+
+    /**
+     * Meta data only array
+     *
+     * @return array
+     */
+    public function toMetaArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'ticker' => $this->ticker,
+            'description' => $this->description,
+            'website' => $this->website,
+            'ref_url' => $this->ref_url,
+            'ref_hash' => $this->ref_hash,
+        ];
+    }
 }
