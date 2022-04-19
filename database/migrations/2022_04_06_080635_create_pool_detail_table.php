@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->string('website');
             $table->string('ref_url');
             $table->string('ref_hash');
-            $table->string('vrf_key');
+            $table->string('vrf_key')->nullable();
             $table->integer('blocks_minted');
             $table->integer('blocks_epoch');
             $table->string('live_stake');

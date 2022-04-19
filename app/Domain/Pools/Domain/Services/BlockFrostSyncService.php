@@ -86,12 +86,22 @@ class BlockFrostSyncService
 
         // Limit metadata fetch as required (data returned is not updated as frequently)
         if ($includeMetaData) {
-            $this->extractPoolMetaData($poolId);
+            $metaResponse = $this->blockFrostClient->get(sprintf('pools/%s/metadata', $poolId));
+            if ($metaResponse->isSuccessful()) {
+                $metaData = $metaResponse->getData();
+                $poolDetailDto
+                    ->setName($metaData['name'])
+                    ->setTicker($metaData['ticker'])
+                    ->setDescription($metaData['description'])
+                    ->setWebsite($metaData['homepage'])
+                    ->setRefUrl($metaData['url'])
+                    ->setRefHash($metaData['hash']);
+            }
         }
 
         // Assume that if a request returns no data or fails at this point
         // we just need to try again in the next cron run
-        $result = $this->poolDetailRepository->upsert($poolDetailDto->toPoolArray(true));
+        $result = $this->poolDetailRepository->upsert($poolDetailDto->toArray(true));
 
         if (!$result) {
             throw new RuntimeException(sprintf(

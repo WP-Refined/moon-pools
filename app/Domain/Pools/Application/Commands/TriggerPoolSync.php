@@ -53,6 +53,9 @@ class TriggerPoolSync extends Command
             case 'full':
                 (new SyncAllPoolDataJob())->handle($this->poolCoordinator);
                 break;
+            default:
+                $this->error('Specify the type of sync to perform: pools, details, meta, full');
+                return ConsoleCommand::FAILURE;
         }
 
         return ConsoleCommand::SUCCESS;

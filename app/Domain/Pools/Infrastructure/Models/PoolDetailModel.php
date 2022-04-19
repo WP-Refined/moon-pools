@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PoolDetailModel extends DomainModel
 {
+    public $incrementing = false;
+
+    public $keyType = 'string';
+
     public $table = 'pool_detail';
 
     /**
