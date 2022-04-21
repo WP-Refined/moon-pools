@@ -31,7 +31,7 @@ class PoolModel extends DomainModel
 
     public function detail(): HasOne
     {
-        return $this->hasOne(PoolDetailModel::class, 'id');
+        return $this->hasOne(PoolDetailModel::class, 'id', 'id');
     }
 
     public function history(): HasMany

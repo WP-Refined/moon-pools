@@ -5,12 +5,20 @@
       <ui-table
         v-model="selectedRows"
         fullwidth
-        :data="data"
+        :data="poolData"
         :thead="thead"
         :tbody="tbody"
       >
-        <template #th-roa>
-          ROA
+        <template #actions="{ data }">
+          <ui-fab mini icon="add" @click="showPoolModal(data)" />
+        </template>
+
+        <template #ticker="{ data }">
+          <div class="ticker">{{ data.ticker }}</div>
+        </template>
+
+        <template #th-saturation>
+          Saturation
           <ui-icon
             v-tooltip="
               'Return of ADA based on staking result from last 30 days'
@@ -20,11 +28,15 @@
             error_outline
           </ui-icon>
         </template>
-        <template #ticker="{ data }">
-          <div class="ticker">{{ data.ticker }}</div>
+        <template #saturation="{ data }">
+          <saturation-bar :amount="data?.detail?.live_saturation || 0" />
         </template>
-        <template #actions="{ data }">
-          <ui-fab mini icon="add" @click="showPoolModal(data)" />
+
+        <template #fees="{ data }">
+          <margin-fees
+            :fee="data?.detail?.fixed_cost || 0"
+            :margin="data?.detail?.margin_cost || 0"
+          />
         </template>
 
         <ui-pagination
@@ -45,8 +57,11 @@
 </template>
 
 <script>
+import { HttpFetch } from '../../shared/Lib';
 import PoolSearch from './PoolSearch.vue';
 import PoolModal from './PoolModal.vue';
+import SaturationBar from '../../shared/components/UI/SaturationBar.vue';
+import MarginFees from '../../shared/components/UI/MarginFees.vue';
 
 const TABLE_HEADERS = [
   {
@@ -58,17 +73,14 @@ const TABLE_HEADERS = [
     columnId: 'ticker',
   },
   {
-    slot: 'th-roa',
-    columnId: 'roa',
+    value: 'Name',
   },
   {
-    value: 'Saturation',
+    slot: 'th-saturation',
+    columnId: 'saturation',
   },
   {
     value: 'Fees / Margin',
-  },
-  {
-    value: 'Luck',
   },
 ];
 
@@ -79,25 +91,17 @@ const TABLE_FIELDS = [
   },
   {
     width: 200,
-    slot: 'ticker',
+    fn: data => data?.detail?.ticker || '-',
   },
   {
-    field: 'roa',
-    fn: data => {
-      return data.roa + '%';
-    },
+    field: 'name',
+    fn: data => data?.detail?.name,
   },
   {
-    field: 'saturation',
-    fn: data => {
-      return data.saturation + 'm / 64m';
-    },
+    slot: 'saturation',
   },
   {
-    field: 'fees',
-  },
-  {
-    field: 'luck',
+    slot: 'fees',
   },
 ];
 
@@ -105,75 +109,13 @@ export default {
   components: {
     PoolSearch,
     PoolModal,
+    SaturationBar,
+    MarginFees,
   },
+
   data() {
     return {
-      data: [
-        {
-          id: 1,
-          ticker: 'Frozen yogurt',
-          roa: 159,
-          saturation: 6,
-          fees: 24,
-          luck: 4,
-        },
-        {
-          id: 2,
-          ticker: 'Ice cream sandwich',
-          roa: 237,
-          saturation: 9,
-          fees: 37,
-          luck: 4.3,
-        },
-        {
-          id: 3,
-          ticker: 'Eclair',
-          roa: 262,
-          saturation: 16,
-          fees: 24,
-          luck: 6,
-        },
-        {
-          id: 4,
-          ticker: 'Cupcake',
-          roa: 305,
-          saturation: 3.7,
-          fees: 67,
-          luck: 3.9,
-        },
-        {
-          id: 5,
-          ticker: 'Gingerbread',
-          roa: 356,
-          saturation: 16,
-          fees: 49,
-          luck: 0,
-        },
-        {
-          id: 6,
-          ticker: 'Jelly bean',
-          roa: 375,
-          saturation: 0,
-          fees: 94,
-          luck: 0,
-        },
-        {
-          id: 7,
-          ticker: 'Lollipop',
-          roa: 392,
-          saturation: 0.2,
-          fees: 98,
-          luck: 6.5,
-        },
-        {
-          id: 8,
-          ticker: 'Honeycomb',
-          roa: 408,
-          saturation: 3.2,
-          fees: 87,
-          luck: 4.9,
-        },
-      ],
+      poolData: [],
       thead: TABLE_HEADERS,
       tbody: TABLE_FIELDS,
       selectedRows: [],
@@ -185,7 +127,19 @@ export default {
     };
   },
 
+  mounted() {
+    this.loadPoolData();
+  },
+
   methods: {
+    loadPoolData() {
+      HttpFetch.get('/pools')
+        .then(response => {
+          this.$data.poolData = response?.data || [];
+          this.$data.total = response?.meta?.last_page || 1;
+        })
+        .catch(error => console.error('Unexpected error occurred: ', error));
+    },
     showPoolModal(data) {
       this.$data.poolModalData = { ...data };
       this.$data.poolModalOpen = true;

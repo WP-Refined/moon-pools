@@ -19,6 +19,6 @@ class PoolRepository extends ModelRepository
      */
     public function findPools(string $filter = null): LengthAwarePaginator
     {
-        return $this->model->paginate(20);
+        return $this->model->with('detail')->paginate(20);
     }
 }
