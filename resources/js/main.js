@@ -5,6 +5,8 @@ import BalmUI from 'balm-ui';
 
 import './../scss/main.scss';
 
-createApp(Dashboard)
-  .use(BalmUI)
-  .mount('#app');
+const app = createApp(Dashboard);
+
+app.use(BalmUI);
+
+app.mount('#app');
