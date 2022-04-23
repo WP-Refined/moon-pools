@@ -1,7 +1,7 @@
 <script>
 import { h } from 'vue';
-import validatePadding from './composables/validatePadding';
-import getPadding from './composables/getPadding';
+import validatePadding from './Composables/validatePadding';
+import getPadding from './Composables/getPadding';
 
 import TrendChartGrid from './TrendChartGrid.vue';
 import TrendChartLabels from './TrendChartLabels.vue';

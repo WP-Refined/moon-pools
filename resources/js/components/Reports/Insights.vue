@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import TotalStakedAda from './charts/TotalStakedAda.vue';
+import TotalStakedAda from './Charts/TotalStakedAda.vue';
 
 export default {
   components: {

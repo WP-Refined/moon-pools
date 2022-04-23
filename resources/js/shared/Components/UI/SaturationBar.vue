@@ -3,7 +3,7 @@
     class="w-min-max rounded-md border-solid py-0.5 text-center text-white"
     :class="[saturatedBgColour]"
   >
-    <span>{{ saturatedPercentage }}</span>
+    <span class="font-bold">{{ saturatedPercentage }}</span>
   </div>
 </template>
 

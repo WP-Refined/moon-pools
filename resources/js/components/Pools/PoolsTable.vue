@@ -60,8 +60,8 @@
 import { HttpFetch } from '../../shared/Lib';
 import PoolSearch from './PoolSearch.vue';
 import PoolModal from './PoolModal.vue';
-import SaturationBar from '../../shared/components/UI/SaturationBar.vue';
-import MarginFees from '../../shared/components/UI/MarginFees.vue';
+import SaturationBar from '../../shared/Components/UI/SaturationBar.vue';
+import MarginFees from '../../shared/Components/UI/MarginFees.vue';
 
 const TABLE_HEADERS = [
   {

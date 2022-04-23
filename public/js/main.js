@@ -17320,8 +17320,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_Lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/Lib */ "./resources/js/shared/Lib/index.js");
 /* harmony import */ var _PoolSearch_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PoolSearch.vue */ "./resources/js/components/Pools/PoolSearch.vue");
 /* harmony import */ var _PoolModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PoolModal.vue */ "./resources/js/components/Pools/PoolModal.vue");
-/* harmony import */ var _shared_components_UI_SaturationBar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/components/UI/SaturationBar.vue */ "./resources/js/shared/components/UI/SaturationBar.vue");
-/* harmony import */ var _shared_components_UI_MarginFees_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/components/UI/MarginFees.vue */ "./resources/js/shared/components/UI/MarginFees.vue");
+/* harmony import */ var _shared_Components_UI_SaturationBar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Components/UI/SaturationBar.vue */ "./resources/js/shared/Components/UI/SaturationBar.vue");
+/* harmony import */ var _shared_Components_UI_MarginFees_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/Components/UI/MarginFees.vue */ "./resources/js/shared/Components/UI/MarginFees.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -17373,8 +17373,8 @@ var TABLE_FIELDS = [{
   components: {
     PoolSearch: _PoolSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     PoolModal: _PoolModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    SaturationBar: _shared_components_UI_SaturationBar_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    MarginFees: _shared_components_UI_MarginFees_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    SaturationBar: _shared_Components_UI_SaturationBar_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    MarginFees: _shared_Components_UI_MarginFees_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -17421,41 +17421,9 @@ var TABLE_FIELDS = [{
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js ***!
-  \**********************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _charts_TotalStakedAda_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./charts/TotalStakedAda.vue */ "./resources/js/components/Reports/charts/TotalStakedAda.vue");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    TotalStakedAda: _charts_TotalStakedAda_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      availableInsights: [{
-        value: 1,
-        label: 'Total Circulating ADA'
-      }, {
-        value: 2,
-        label: 'Total Staked ADA'
-      }]
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=script&lang=js":
 /*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=script&lang=js ***!
   \***********************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -17464,11 +17432,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _shared_components_TrendCharts_TrendChart_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../shared/components/TrendCharts/TrendChart.vue */ "./resources/js/shared/components/TrendCharts/TrendChart.vue");
+/* harmony import */ var _shared_Components_TrendCharts_TrendChart_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../shared/Components/TrendCharts/TrendChart.vue */ "./resources/js/shared/Components/TrendCharts/TrendChart.vue");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    TrendChart: _shared_components_TrendCharts_TrendChart_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TrendChart: _shared_Components_TrendCharts_TrendChart_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -17515,6 +17483,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Charts_TotalStakedAda_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Charts/TotalStakedAda.vue */ "./resources/js/components/Reports/Charts/TotalStakedAda.vue");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    TotalStakedAda: _Charts_TotalStakedAda_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      availableInsights: [{
+        value: 1,
+        label: 'Total Circulating ADA'
+      }, {
+        value: 2,
+        label: 'Total Staked ADA'
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Dashboard.vue?vue&type=script&lang=js":
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Dashboard.vue?vue&type=script&lang=js ***!
@@ -17547,9 +17547,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChart.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChart.vue?vue&type=script&lang=js":
 /*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChart.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChart.vue?vue&type=script&lang=js ***!
   \***********************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -17559,11 +17559,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _composables_validatePadding__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./composables/validatePadding */ "./resources/js/shared/components/TrendCharts/composables/validatePadding.js");
-/* harmony import */ var _composables_getPadding__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./composables/getPadding */ "./resources/js/shared/components/TrendCharts/composables/getPadding.js");
-/* harmony import */ var _TrendChartGrid_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TrendChartGrid.vue */ "./resources/js/shared/components/TrendCharts/TrendChartGrid.vue");
-/* harmony import */ var _TrendChartLabels_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TrendChartLabels.vue */ "./resources/js/shared/components/TrendCharts/TrendChartLabels.vue");
-/* harmony import */ var _TrendChartCurve_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TrendChartCurve.vue */ "./resources/js/shared/components/TrendCharts/TrendChartCurve.vue");
+/* harmony import */ var _Composables_validatePadding__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Composables/validatePadding */ "./resources/js/shared/Components/TrendCharts/Composables/validatePadding.js");
+/* harmony import */ var _Composables_getPadding__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Composables/getPadding */ "./resources/js/shared/Components/TrendCharts/Composables/getPadding.js");
+/* harmony import */ var _TrendChartGrid_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TrendChartGrid.vue */ "./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue");
+/* harmony import */ var _TrendChartLabels_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TrendChartLabels.vue */ "./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue");
+/* harmony import */ var _TrendChartCurve_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TrendChartCurve.vue */ "./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -17620,7 +17620,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       "default": '5',
       type: String,
       validator: function validator(val) {
-        return (0,_composables_validatePadding__WEBPACK_IMPORTED_MODULE_1__["default"])(val);
+        return (0,_Composables_validatePadding__WEBPACK_IMPORTED_MODULE_1__["default"])(val);
       }
     },
     interactive: {
@@ -17645,8 +17645,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   computed: {
     paddingObject: function paddingObject() {
-      if (!this.padding) return (0,_composables_getPadding__WEBPACK_IMPORTED_MODULE_2__["default"])('0');
-      return (0,_composables_getPadding__WEBPACK_IMPORTED_MODULE_2__["default"])(this.padding);
+      if (!this.padding) return (0,_Composables_getPadding__WEBPACK_IMPORTED_MODULE_2__["default"])('0');
+      return (0,_Composables_getPadding__WEBPACK_IMPORTED_MODULE_2__["default"])(this.padding);
     },
     boundary: function boundary() {
       var width = this.width,
@@ -17893,9 +17893,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js":
 /*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js ***!
   \****************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -17905,8 +17905,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _composables_genPoints__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./composables/genPoints */ "./resources/js/shared/components/TrendCharts/composables/genPoints.js");
-/* harmony import */ var _composables_genPath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./composables/genPath */ "./resources/js/shared/components/TrendCharts/composables/genPath.js");
+/* harmony import */ var _Composables_genPoints__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Composables/genPoints */ "./resources/js/shared/Components/TrendCharts/Composables/genPoints.js");
+/* harmony import */ var _Composables_genPath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Composables/genPath */ "./resources/js/shared/Components/TrendCharts/Composables/genPath.js");
 
 
 
@@ -17960,10 +17960,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     points: function points() {
-      return (0,_composables_genPoints__WEBPACK_IMPORTED_MODULE_1__["default"])(this.data, this.boundary, this.maxValue, this.minValue, this.maxAmount);
+      return (0,_Composables_genPoints__WEBPACK_IMPORTED_MODULE_1__["default"])(this.data, this.boundary, this.maxValue, this.minValue, this.maxAmount);
     },
     paths: function paths() {
-      return (0,_composables_genPath__WEBPACK_IMPORTED_MODULE_2__["default"])(this.points, this.smooth, this.boundary);
+      return (0,_Composables_genPath__WEBPACK_IMPORTED_MODULE_2__["default"])(this.points, this.smooth, this.boundary);
     }
   },
   render: function render() {
@@ -18017,9 +18017,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js":
 /*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js ***!
   \***************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -18132,9 +18132,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js":
 /*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js ***!
   \*****************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -18274,9 +18274,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/MarginFees.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/MarginFees.vue?vue&type=script&lang=js":
 /*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/MarginFees.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/MarginFees.vue?vue&type=script&lang=js ***!
   \**************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -18309,9 +18309,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/SaturationBar.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=script&lang=js":
 /*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/SaturationBar.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=script&lang=js ***!
   \*****************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -18883,6 +18883,37 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=template&id=803b5b02":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=template&id=803b5b02 ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "mp-trend-chart"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_trend_chart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("trend-chart");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_trend_chart, {
+    datasets: $options.dataset,
+    min: 0,
+    padding: "5 0 0 0",
+    interactive: false
+  }, null, 8
+  /* PROPS */
+  , ["datasets"])]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=template&id=8314b194":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=template&id=8314b194 ***!
@@ -18920,37 +18951,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_total_staked_ada = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("total-staked-ada");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_total_staked_ada)])]);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=template&id=45ebf29f":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=template&id=45ebf29f ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  "class": "mp-trend-chart"
-};
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_trend_chart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("trend-chart");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_trend_chart, {
-    datasets: $options.dataset,
-    min: 0,
-    padding: "5 0 0 0",
-    interactive: false
-  }, null, 8
-  /* PROPS */
-  , ["datasets"])]);
 }
 
 /***/ }),
@@ -19077,9 +19077,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/MarginFees.vue?vue&type=template&id=d54182ce":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/MarginFees.vue?vue&type=template&id=7b3e52b9":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/MarginFees.vue?vue&type=template&id=d54182ce ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/MarginFees.vue?vue&type=template&id=7b3e52b9 ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -19098,9 +19098,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/SaturationBar.vue?vue&type=template&id=4aefab9a":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=template&id=3d6f2213":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/SaturationBar.vue?vue&type=template&id=4aefab9a ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=template&id=3d6f2213 ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -19111,10 +19111,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "font-bold"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["w-min-max rounded-md border-solid py-0.5 text-center text-white", [$options.saturatedBgColour]])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.saturatedPercentage), 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.saturatedPercentage), 1
   /* TEXT */
   )], 2
   /* CLASS */
@@ -19145,10 +19148,176 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/shared/Lib/http-fetch.js":
-/*!***********************************************!*\
-  !*** ./resources/js/shared/Lib/http-fetch.js ***!
-  \***********************************************/
+/***/ "./resources/js/shared/Components/TrendCharts/Composables/genPath.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/shared/Components/TrendCharts/Composables/genPath.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (pnts, smooth, _ref) {
+  var maxY = _ref.maxY;
+
+  var points = _toConsumableArray(pnts);
+
+  var start = points.shift();
+  var end = points[points.length - 1];
+  var distance = points[0].x - start.x;
+  var bezierX = distance / 2; // Create Line Path
+
+  var linePath = "M ".concat(start.x, ",").concat(start.y);
+  points.forEach(function (point, index) {
+    if (!smooth) linePath += " L".concat(point.x, ",").concat(point.y);else {
+      var prev = points[index - 1] || start;
+      linePath += " C ".concat(bezierX + prev.x, ",").concat(prev.y, " ").concat(bezierX + prev.x, ",").concat(point.y, " ").concat(point.x, ",").concat(point.y);
+    }
+  }); // Create Fill Path
+
+  var fillPath = linePath;
+  if (end.Y !== maxY) fillPath += " L".concat(end.x, ",").concat(maxY);
+  if (start.Y !== maxY) fillPath += " L".concat(start.x, ",").concat(maxY);
+  fillPath += ' Z';
+  return {
+    linePath: linePath,
+    fillPath: fillPath
+  };
+});
+
+/***/ }),
+
+/***/ "./resources/js/shared/Components/TrendCharts/Composables/genPoints.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/shared/Components/TrendCharts/Composables/genPoints.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (arr, _ref, max, min, maxAmount) {
+  var minX = _ref.minX,
+      minY = _ref.minY,
+      maxX = _ref.maxX,
+      maxY = _ref.maxY;
+  arr = arr.map(function (item) {
+    return typeof item === 'number' ? item : item.downloads;
+  }); // TODO: Refactor to support generic type
+
+  var minValue = min - 0.001;
+  var gridX = (maxX - minX) / (maxAmount - 1);
+  var gridY = (maxY - minY) / (max + 0.001 - minValue);
+  return arr.map(function (value, index) {
+    return {
+      x: index * gridX + minX,
+      y: maxY - (value - minValue) * gridY + (index === maxAmount - 1) * 0.00001 - +(index === 0) * 0.00001
+    };
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/shared/Components/TrendCharts/Composables/getPadding.js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/shared/Components/TrendCharts/Composables/getPadding.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (padding) {
+  var arr = padding.split(' ').filter(function (item) {
+    return item !== '';
+  }).map(function (item) {
+    return parseInt(item);
+  });
+
+  switch (arr.length) {
+    case 4:
+      return {
+        top: arr[0],
+        right: arr[1],
+        bottom: arr[2],
+        left: arr[3]
+      };
+
+    case 3:
+      return {
+        top: arr[0],
+        right: arr[1],
+        bottom: arr[2],
+        left: arr[1]
+      };
+
+    case 2:
+      return {
+        top: arr[0],
+        right: arr[1],
+        bottom: arr[0],
+        left: arr[1]
+      };
+
+    default:
+      return {
+        top: arr[0],
+        right: arr[0],
+        bottom: arr[0],
+        left: arr[0]
+      };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/shared/Components/TrendCharts/Composables/validatePadding.js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/shared/Components/TrendCharts/Composables/validatePadding.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (padding) {
+  var arr = padding.split(' ').filter(function (item) {
+    return item !== '';
+  }).map(function (item) {
+    return parseInt(item);
+  });
+  if (arr.length < 1 || arr.length > 4) return false;
+  return arr.every(function (item) {
+    return typeof item == 'number' && item >= 0;
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/shared/Lib/HttpFetch.js":
+/*!**********************************************!*\
+  !*** ./resources/js/shared/Lib/HttpFetch.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19277,176 +19446,10 @@ function handleResponse(response) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HttpFetch": () => (/* reexport safe */ _http_fetch__WEBPACK_IMPORTED_MODULE_0__.HttpFetch)
+/* harmony export */   "HttpFetch": () => (/* reexport safe */ _HttpFetch__WEBPACK_IMPORTED_MODULE_0__.HttpFetch)
 /* harmony export */ });
-/* harmony import */ var _http_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http-fetch */ "./resources/js/shared/Lib/http-fetch.js");
+/* harmony import */ var _HttpFetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HttpFetch */ "./resources/js/shared/Lib/HttpFetch.js");
 
-
-/***/ }),
-
-/***/ "./resources/js/shared/components/TrendCharts/composables/genPath.js":
-/*!***************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/composables/genPath.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (pnts, smooth, _ref) {
-  var maxY = _ref.maxY;
-
-  var points = _toConsumableArray(pnts);
-
-  var start = points.shift();
-  var end = points[points.length - 1];
-  var distance = points[0].x - start.x;
-  var bezierX = distance / 2; // Create Line Path
-
-  var linePath = "M ".concat(start.x, ",").concat(start.y);
-  points.forEach(function (point, index) {
-    if (!smooth) linePath += " L".concat(point.x, ",").concat(point.y);else {
-      var prev = points[index - 1] || start;
-      linePath += " C ".concat(bezierX + prev.x, ",").concat(prev.y, " ").concat(bezierX + prev.x, ",").concat(point.y, " ").concat(point.x, ",").concat(point.y);
-    }
-  }); // Create Fill Path
-
-  var fillPath = linePath;
-  if (end.Y !== maxY) fillPath += " L".concat(end.x, ",").concat(maxY);
-  if (start.Y !== maxY) fillPath += " L".concat(start.x, ",").concat(maxY);
-  fillPath += ' Z';
-  return {
-    linePath: linePath,
-    fillPath: fillPath
-  };
-});
-
-/***/ }),
-
-/***/ "./resources/js/shared/components/TrendCharts/composables/genPoints.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/composables/genPoints.js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (arr, _ref, max, min, maxAmount) {
-  var minX = _ref.minX,
-      minY = _ref.minY,
-      maxX = _ref.maxX,
-      maxY = _ref.maxY;
-  arr = arr.map(function (item) {
-    return typeof item === 'number' ? item : item.downloads;
-  }); // TODO: Refactor to support generic type
-
-  var minValue = min - 0.001;
-  var gridX = (maxX - minX) / (maxAmount - 1);
-  var gridY = (maxY - minY) / (max + 0.001 - minValue);
-  return arr.map(function (value, index) {
-    return {
-      x: index * gridX + minX,
-      y: maxY - (value - minValue) * gridY + (index === maxAmount - 1) * 0.00001 - +(index === 0) * 0.00001
-    };
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/shared/components/TrendCharts/composables/getPadding.js":
-/*!******************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/composables/getPadding.js ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (padding) {
-  var arr = padding.split(' ').filter(function (item) {
-    return item !== '';
-  }).map(function (item) {
-    return parseInt(item);
-  });
-
-  switch (arr.length) {
-    case 4:
-      return {
-        top: arr[0],
-        right: arr[1],
-        bottom: arr[2],
-        left: arr[3]
-      };
-
-    case 3:
-      return {
-        top: arr[0],
-        right: arr[1],
-        bottom: arr[2],
-        left: arr[1]
-      };
-
-    case 2:
-      return {
-        top: arr[0],
-        right: arr[1],
-        bottom: arr[0],
-        left: arr[1]
-      };
-
-    default:
-      return {
-        top: arr[0],
-        right: arr[0],
-        bottom: arr[0],
-        left: arr[0]
-      };
-  }
-});
-
-/***/ }),
-
-/***/ "./resources/js/shared/components/TrendCharts/composables/validatePadding.js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/composables/validatePadding.js ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (padding) {
-  var arr = padding.split(' ').filter(function (item) {
-    return item !== '';
-  }).map(function (item) {
-    return parseInt(item);
-  });
-  if (arr.length < 1 || arr.length > 4) return false;
-  return arr.every(function (item) {
-    return typeof item == 'number' && item >= 0;
-  });
-});
 
 /***/ }),
 
@@ -20904,6 +20907,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/Reports/Charts/TotalStakedAda.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Reports/Charts/TotalStakedAda.vue ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TotalStakedAda_vue_vue_type_template_id_803b5b02__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TotalStakedAda.vue?vue&type=template&id=803b5b02 */ "./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=template&id=803b5b02");
+/* harmony import */ var _TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TotalStakedAda.vue?vue&type=script&lang=js */ "./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=script&lang=js");
+/* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TotalStakedAda_vue_vue_type_template_id_803b5b02__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Reports/Charts/TotalStakedAda.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/Reports/Insights.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/Reports/Insights.vue ***!
@@ -20924,34 +20955,6 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Insights_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Insights_vue_vue_type_template_id_8314b194__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Reports/Insights.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
-/***/ "./resources/js/components/Reports/charts/TotalStakedAda.vue":
-/*!*******************************************************************!*\
-  !*** ./resources/js/components/Reports/charts/TotalStakedAda.vue ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TotalStakedAda_vue_vue_type_template_id_45ebf29f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TotalStakedAda.vue?vue&type=template&id=45ebf29f */ "./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=template&id=45ebf29f");
-/* harmony import */ var _TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TotalStakedAda.vue?vue&type=script&lang=js */ "./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=script&lang=js");
-/* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TotalStakedAda_vue_vue_type_template_id_45ebf29f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Reports/charts/TotalStakedAda.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -20988,9 +20991,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChart.vue":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChart.vue":
 /*!*******************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChart.vue ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChart.vue ***!
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -20999,13 +21002,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChart.vue?vue&type=script&lang=js */ "./resources/js/shared/components/TrendCharts/TrendChart.vue?vue&type=script&lang=js");
+/* harmony import */ var _TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChart.vue?vue&type=script&lang=js */ "./resources/js/shared/Components/TrendCharts/TrendChart.vue?vue&type=script&lang=js");
 /* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/components/TrendCharts/TrendChart.vue"]])
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/Components/TrendCharts/TrendChart.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21014,9 +21017,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChartCurve.vue":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue":
 /*!************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChartCurve.vue ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue ***!
   \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21025,13 +21028,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChartCurve.vue?vue&type=script&lang=js */ "./resources/js/shared/components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js");
+/* harmony import */ var _TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChartCurve.vue?vue&type=script&lang=js */ "./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js");
 /* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/components/TrendCharts/TrendChartCurve.vue"]])
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/Components/TrendCharts/TrendChartCurve.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21040,9 +21043,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChartGrid.vue":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue":
 /*!***********************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChartGrid.vue ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue ***!
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21051,13 +21054,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChartGrid.vue?vue&type=script&lang=js */ "./resources/js/shared/components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js");
+/* harmony import */ var _TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChartGrid.vue?vue&type=script&lang=js */ "./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js");
 /* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/components/TrendCharts/TrendChartGrid.vue"]])
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/Components/TrendCharts/TrendChartGrid.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21066,9 +21069,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChartLabels.vue":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue":
 /*!*************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChartLabels.vue ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue ***!
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21077,13 +21080,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChartLabels.vue?vue&type=script&lang=js */ "./resources/js/shared/components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js");
+/* harmony import */ var _TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrendChartLabels.vue?vue&type=script&lang=js */ "./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js");
 /* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/components/TrendCharts/TrendChartLabels.vue"]])
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"], [['__file',"resources/js/shared/Components/TrendCharts/TrendChartLabels.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21092,9 +21095,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/UI/MarginFees.vue":
+/***/ "./resources/js/shared/Components/UI/MarginFees.vue":
 /*!**********************************************************!*\
-  !*** ./resources/js/shared/components/UI/MarginFees.vue ***!
+  !*** ./resources/js/shared/Components/UI/MarginFees.vue ***!
   \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21103,15 +21106,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _MarginFees_vue_vue_type_template_id_d54182ce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MarginFees.vue?vue&type=template&id=d54182ce */ "./resources/js/shared/components/UI/MarginFees.vue?vue&type=template&id=d54182ce");
-/* harmony import */ var _MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MarginFees.vue?vue&type=script&lang=js */ "./resources/js/shared/components/UI/MarginFees.vue?vue&type=script&lang=js");
+/* harmony import */ var _MarginFees_vue_vue_type_template_id_7b3e52b9__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MarginFees.vue?vue&type=template&id=7b3e52b9 */ "./resources/js/shared/Components/UI/MarginFees.vue?vue&type=template&id=7b3e52b9");
+/* harmony import */ var _MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MarginFees.vue?vue&type=script&lang=js */ "./resources/js/shared/Components/UI/MarginFees.vue?vue&type=script&lang=js");
 /* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MarginFees_vue_vue_type_template_id_d54182ce__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/shared/components/UI/MarginFees.vue"]])
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MarginFees_vue_vue_type_template_id_7b3e52b9__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/shared/Components/UI/MarginFees.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21120,9 +21123,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/UI/SaturationBar.vue":
+/***/ "./resources/js/shared/Components/UI/SaturationBar.vue":
 /*!*************************************************************!*\
-  !*** ./resources/js/shared/components/UI/SaturationBar.vue ***!
+  !*** ./resources/js/shared/Components/UI/SaturationBar.vue ***!
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21131,15 +21134,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _SaturationBar_vue_vue_type_template_id_4aefab9a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SaturationBar.vue?vue&type=template&id=4aefab9a */ "./resources/js/shared/components/UI/SaturationBar.vue?vue&type=template&id=4aefab9a");
-/* harmony import */ var _SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SaturationBar.vue?vue&type=script&lang=js */ "./resources/js/shared/components/UI/SaturationBar.vue?vue&type=script&lang=js");
+/* harmony import */ var _SaturationBar_vue_vue_type_template_id_3d6f2213__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SaturationBar.vue?vue&type=template&id=3d6f2213 */ "./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=template&id=3d6f2213");
+/* harmony import */ var _SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SaturationBar.vue?vue&type=script&lang=js */ "./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=script&lang=js");
 /* harmony import */ var _home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SaturationBar_vue_vue_type_template_id_4aefab9a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/shared/components/UI/SaturationBar.vue"]])
+const __exports__ = /*#__PURE__*/(0,_home_brody_repos_wp_refined_cardano_insights_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SaturationBar_vue_vue_type_template_id_3d6f2213__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/shared/Components/UI/SaturationBar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -21212,6 +21215,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=script&lang=js":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TotalStakedAda.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js":
 /*!******************************************************************************!*\
   !*** ./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js ***!
@@ -21224,22 +21243,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Insights_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Insights_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Insights.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
-/***/ "./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=script&lang=js":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=script&lang=js ***!
-  \*******************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TotalStakedAda.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -21260,9 +21263,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChart.vue?vue&type=script&lang=js":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChart.vue?vue&type=script&lang=js":
 /*!*******************************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChart.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChart.vue?vue&type=script&lang=js ***!
   \*******************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21271,14 +21274,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChart.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChart.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChart_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChart.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChart.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js":
 /*!************************************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js ***!
   \************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21287,14 +21290,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChartCurve.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartCurve_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChartCurve.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartCurve.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js":
 /*!***********************************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js ***!
   \***********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21303,14 +21306,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChartGrid.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartGrid_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChartGrid.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartGrid.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js":
+/***/ "./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js":
 /*!*************************************************************************************************!*\
-  !*** ./resources/js/shared/components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js ***!
   \*************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21319,14 +21322,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChartLabels.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrendChartLabels_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrendChartLabels.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/TrendCharts/TrendChartLabels.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/UI/MarginFees.vue?vue&type=script&lang=js":
+/***/ "./resources/js/shared/Components/UI/MarginFees.vue?vue&type=script&lang=js":
 /*!**********************************************************************************!*\
-  !*** ./resources/js/shared/components/UI/MarginFees.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/shared/Components/UI/MarginFees.vue?vue&type=script&lang=js ***!
   \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21335,14 +21338,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MarginFees.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/MarginFees.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MarginFees.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/MarginFees.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/UI/SaturationBar.vue?vue&type=script&lang=js":
+/***/ "./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=script&lang=js":
 /*!*************************************************************************************!*\
-  !*** ./resources/js/shared/components/UI/SaturationBar.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=script&lang=js ***!
   \*************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21351,7 +21354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SaturationBar.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/SaturationBar.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SaturationBar.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -21420,6 +21423,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=template&id=803b5b02":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=template&id=803b5b02 ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_template_id_803b5b02__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_template_id_803b5b02__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TotalStakedAda.vue?vue&type=template&id=803b5b02 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Charts/TotalStakedAda.vue?vue&type=template&id=803b5b02");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Reports/Insights.vue?vue&type=template&id=8314b194":
 /*!************************************************************************************!*\
   !*** ./resources/js/components/Reports/Insights.vue?vue&type=template&id=8314b194 ***!
@@ -21432,22 +21451,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Insights_vue_vue_type_template_id_8314b194__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Insights_vue_vue_type_template_id_8314b194__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Insights.vue?vue&type=template&id=8314b194 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/Insights.vue?vue&type=template&id=8314b194");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=template&id=45ebf29f":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=template&id=45ebf29f ***!
-  \*************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_template_id_45ebf29f__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TotalStakedAda_vue_vue_type_template_id_45ebf29f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TotalStakedAda.vue?vue&type=template&id=45ebf29f */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Reports/charts/TotalStakedAda.vue?vue&type=template&id=45ebf29f");
 
 
 /***/ }),
@@ -21468,34 +21471,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/UI/MarginFees.vue?vue&type=template&id=d54182ce":
+/***/ "./resources/js/shared/Components/UI/MarginFees.vue?vue&type=template&id=7b3e52b9":
 /*!****************************************************************************************!*\
-  !*** ./resources/js/shared/components/UI/MarginFees.vue?vue&type=template&id=d54182ce ***!
+  !*** ./resources/js/shared/Components/UI/MarginFees.vue?vue&type=template&id=7b3e52b9 ***!
   \****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_template_id_d54182ce__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_template_id_7b3e52b9__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_template_id_d54182ce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MarginFees.vue?vue&type=template&id=d54182ce */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/MarginFees.vue?vue&type=template&id=d54182ce");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MarginFees_vue_vue_type_template_id_7b3e52b9__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MarginFees.vue?vue&type=template&id=7b3e52b9 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/MarginFees.vue?vue&type=template&id=7b3e52b9");
 
 
 /***/ }),
 
-/***/ "./resources/js/shared/components/UI/SaturationBar.vue?vue&type=template&id=4aefab9a":
+/***/ "./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=template&id=3d6f2213":
 /*!*******************************************************************************************!*\
-  !*** ./resources/js/shared/components/UI/SaturationBar.vue?vue&type=template&id=4aefab9a ***!
+  !*** ./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=template&id=3d6f2213 ***!
   \*******************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_template_id_4aefab9a__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_template_id_3d6f2213__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_template_id_4aefab9a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SaturationBar.vue?vue&type=template&id=4aefab9a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/components/UI/SaturationBar.vue?vue&type=template&id=4aefab9a");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SaturationBar_vue_vue_type_template_id_3d6f2213__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SaturationBar.vue?vue&type=template&id=3d6f2213 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/shared/Components/UI/SaturationBar.vue?vue&type=template&id=3d6f2213");
 
 
 /***/ }),

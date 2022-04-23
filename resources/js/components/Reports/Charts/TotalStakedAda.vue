@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TrendChart from '../../../shared/components/TrendCharts/TrendChart.vue';
+import TrendChart from '../../../shared/Components/TrendCharts/TrendChart.vue';
 
 export default {
   components: {

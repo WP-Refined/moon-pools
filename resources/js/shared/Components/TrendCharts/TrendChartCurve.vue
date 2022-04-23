@@ -1,7 +1,7 @@
 <script>
 import { h } from 'vue';
-import genPoints from './composables/genPoints';
-import genPath from './composables/genPath';
+import genPoints from './Composables/genPoints';
+import genPath from './Composables/genPath';
 
 export default {
   name: 'TrendChartCurve',
