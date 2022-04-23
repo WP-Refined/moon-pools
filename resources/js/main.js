@@ -1,12 +1,10 @@
-import { createApp } from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler';
 
 import Dashboard from './pages/Dashboard.vue';
 import BalmUI from 'balm-ui';
 
-createApp({
-  components: {
-    Dashboard,
-  },
-})
+import './../scss/main.scss';
+
+createApp(Dashboard)
   .use(BalmUI)
   .mount('#app');

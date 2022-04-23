@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="/fonts/vendor/balm-ui/material-icons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
@@ -21,14 +22,12 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+        @vite
     </head>
     <body>
         <div id="app">
             <dashboard></dashboard>
         </div>
     </body>
-    <script src="{{ asset('js/manifest.js') }}"></script>
-    <script src="{{ asset('js/vendor.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
 </html>
