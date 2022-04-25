@@ -8,4 +8,19 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [vue(), laravel()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('balm-ui')) {
+              return 'vendor_bui';
+            }
+
+            return 'vendor';
+          }
+        },
+      }
+    }
+  }
 });

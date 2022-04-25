@@ -9,10 +9,6 @@
       <template #toolbar="{ toolbarItemClass }">
         <ui-icon-button
           :class="toolbarItemClass"
-          icon="invert_colors"
-        ></ui-icon-button>
-        <ui-icon-button
-          :class="toolbarItemClass"
           icon="filter_drama"
         ></ui-icon-button>
       </template>
