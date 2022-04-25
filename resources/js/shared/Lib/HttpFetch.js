@@ -7,6 +7,7 @@ const BASE_URI = '/api';
 const CSRF_TOKEN = document.head.querySelector('meta[name="csrf-token"]');
 const DEFAULT_HEADERS = {
   'X-CSRF-TOKEN': null,
+  Accept: 'application/json',
 };
 
 if (CSRF_TOKEN) {

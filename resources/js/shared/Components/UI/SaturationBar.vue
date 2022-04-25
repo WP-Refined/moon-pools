@@ -1,7 +1,7 @@
 <template>
   <div
-    class="w-min-max rounded-md border-solid py-0.5 text-center text-white"
-    :class="[saturatedBgColour]"
+    class="w-min-max rounded-md border-solid text-center text-white"
+    :class="[saturatedBgColour, { 'py-0.5': size !== 'sm' }]"
   >
     <span class="font-bold">{{ saturatedPercentage }}</span>
   </div>
@@ -13,6 +13,14 @@ export default {
     amount: {
       type: [Number, String],
       required: true,
+    },
+    size: {
+      type: [Number, String],
+      required: false,
+      default: 'md',
+      validator: val => {
+        return ['sm', 'md'].includes(val);
+      },
     },
   },
 

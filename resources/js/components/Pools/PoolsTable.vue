@@ -14,7 +14,7 @@
         </template>
 
         <template #ticker="{ data }">
-          <div class="ticker">{{ data.ticker }}</div>
+          <div class="ticker">{{ data?.ticker }}</div>
         </template>
 
         <template #th-saturation>

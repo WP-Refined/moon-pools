@@ -15,14 +15,14 @@
             :src="'/images/pool-logo-example.png'"
           />
           <div>
-            <span class="font-semibold">({{ poolTicker }}) </span>{{ poolName }}
+            <span class="font-semibold">({{ poolTicker }})&nbsp;</span>{{ poolName }}
           </div>
         </div>
       </ui-dialog-title>
       <ui-dialog-content>
         <div class="pb-4">
           <div>
-            <strong class="block"> Description </strong>
+            <strong class="block">Description</strong>
             <span>
               {{ poolDescription }}
             </span>
@@ -44,31 +44,29 @@
             </span>
           </div>
           <div>
-            <strong class="block"> Saturation </strong>
+            <strong class="block">Saturation</strong>
             <span>
-              <saturation-bar :amount="pool?.live_saturation || 0" />
+              <saturation-bar :amount="pool?.live_saturation || 0" size="sm" />
             </span>
           </div>
           <div>
-            <strong class="block"> Active Stake </strong>
-            <span>
-              {{ activeStake }}
+            <strong class="block">Active Stake</strong>
+            <span class="flex items-center">
+              {{ activeStake }}<ada-icon />
             </span>
           </div>
           <div>
-            <strong class="block"> Live Stake </strong>
-            <span>
-              {{ liveStake }}
+            <strong class="block">Live Stake</strong>
+            <span class="flex items-center">{{ liveStake }}<ada-icon /></span>
+          </div>
+          <div>
+            <strong class="block">Pledge</strong>
+            <span class="flex items-center">
+              {{ poolPledge }}<ada-icon />
             </span>
           </div>
           <div>
-            <strong class="block"> Pledge </strong>
-            <span>
-              {{ poolPledge }}
-            </span>
-          </div>
-          <div>
-            <strong class="block"> Fixed Cost / Margin </strong>
+            <strong class="block">Fixed Cost / Margin</strong>
             <span>
               <margin-fees
                 :fee="pool?.fixed_cost || 0"
@@ -79,10 +77,13 @@
         </div>
         <div class="pt-4">
           <div>
-            <strong class="block"> Pool ID </strong>
-            <span class="break-all">
-              {{ pool?.id }}
-            </span>
+            <strong class="block">Pool ID</strong>
+            <div class="flex">
+              <span class="break-all grow w-3/4">
+                {{ poolIdClone?.text || pool?.id }}
+              </span>
+              <ui-fab v-copy="poolIdClone" mini icon="content_copy" />
+            </div>
           </div>
         </div>
       </ui-dialog-content>
@@ -94,11 +95,13 @@
 <script>
 import SaturationBar from '../../shared/Components/UI/SaturationBar.vue';
 import MarginFees from '../../shared/Components/UI/MarginFees.vue';
+import AdaIcon from '../../shared/Components/UI/AdaIcon.vue';
 
 export default {
   components: {
     SaturationBar,
     MarginFees,
+    AdaIcon,
   },
 
   props: {
@@ -119,6 +122,12 @@ export default {
     return {
       modalOpen: this.$props.showModal,
       pool: this.$props.poolData,
+      poolIdClone: {
+        text: this.$props.poolData?.id || '',
+        success: () => {
+          this.$toast('Copied!');
+        },
+      },
     };
   },
 
@@ -169,6 +178,7 @@ export default {
 
     poolData(val) {
       this.$data.pool = val;
+      this.$data.poolIdClone.text = val?.id;
     },
   },
 
