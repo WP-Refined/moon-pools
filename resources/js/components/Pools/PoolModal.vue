@@ -12,8 +12,7 @@
         <div class="flex items-center mt-5">
           <img
             class="mr-1 w-8 rounded-full"
-            src="https://cdn.adapools.org/pool_logo/7f6c103302f96390d478a170fe80938b76fccd8a23490e3b6ddebcf7.png"
-            alt=""
+            :src="'/images/pool-logo-example.png'"
           />
           <div>
             <span class="font-semibold">({{ poolTicker }}) </span>{{ poolName }}

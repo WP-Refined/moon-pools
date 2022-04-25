@@ -146,7 +146,6 @@ export default {
     },
     closePoolModal() {
       this.$data.poolModalOpen = false;
-      this.$nextTick(() => (this.$data.poolModalData = {}));
     },
     onPage(page) {
       alert('Page change to ' + page);
