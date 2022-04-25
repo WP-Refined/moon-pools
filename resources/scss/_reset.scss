@@ -4,6 +4,16 @@
   padding-left: 0;
 }
 
+// Fix styles when included image in modal title
+.pool-detail-modal {
+  .mdc-dialog__title::before {
+    display: none !important;
+  }
+  .mdc-dialog__close {
+    top: -5px !important;
+  }
+}
+
 // Increase space behind floating topbar
 @media (max-width: 599px) {
   .mdc-top-app-bar--fixed-adjust {

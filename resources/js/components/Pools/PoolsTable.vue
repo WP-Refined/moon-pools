@@ -50,7 +50,7 @@
 
     <pool-modal
       :show-modal="poolModalOpen"
-      :data="poolModalData"
+      :pool-data="poolModalData"
       @close="closePoolModal"
     />
   </div>
@@ -141,12 +141,12 @@ export default {
         .catch(error => console.error('Unexpected error occurred: ', error));
     },
     showPoolModal(data) {
-      this.$data.poolModalData = { ...data };
+      this.$data.poolModalData = { ...(data?.detail || {}) };
       this.$data.poolModalOpen = true;
     },
     closePoolModal() {
       this.$data.poolModalOpen = false;
-      this.$data.poolModalData = {};
+      this.$nextTick(() => (this.$data.poolModalData = {}));
     },
     onPage(page) {
       alert('Page change to ' + page);
