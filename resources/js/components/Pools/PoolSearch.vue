@@ -1,32 +1,32 @@
 <template>
   <div class="py-3">
-    <ui-autocomplete
-      v-model="poolFilter"
+    <ui-textfield
+      :model-value="poolFilter"
       fullwidth
       outlined
-      placeholder="Search ..."
-      delay="500"
-      :source="source"
       auto-focus
-      @search="onSearch"
-    ></ui-autocomplete>
+      placeholder="Search ..."
+      @update:model-value="$emit('search', $event)"
+    ></ui-textfield>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    filter: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
+
   emits: ['search'],
+
   data() {
     return {
-      poolFilter: '',
-      source: [],
+      poolFilter: this.$props.filter,
     };
-  },
-  methods: {
-    onSearch: event => {
-      this.$emit('search', event);
-      // this.$data.poolFilter
-    },
   },
 };
 </script>

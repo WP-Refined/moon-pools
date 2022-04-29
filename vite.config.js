@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
+        manualChunks: id => {
           if (id.includes('node_modules')) {
             if (id.includes('balm-ui')) {
               return 'vendor_bui';
@@ -20,7 +20,7 @@ export default defineConfig({
             return 'vendor';
           }
         },
-      }
-    }
-  }
+      },
+    },
+  },
 });

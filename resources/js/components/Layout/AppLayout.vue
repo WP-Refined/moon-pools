@@ -58,14 +58,6 @@
     <div id="content-main">
       <slot name="content" />
     </div>
-
-    <!-- <footer>
-      <slot name="footer">
-          <div>
-              <p class="inline-flex items-center">Made with <ui-icon class="primary">favorite</ui-icon> from <img class="w-10 rounded-sm" src="/images/au-flag.svg" alt=""></p>
-          </div>
-      </slot>
-  </footer> -->
   </div>
 </template>
 

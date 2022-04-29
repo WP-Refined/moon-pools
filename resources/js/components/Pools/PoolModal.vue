@@ -15,7 +15,8 @@
             :src="'/images/pool-logo-example.png'"
           />
           <div>
-            <span class="font-semibold">({{ poolTicker }})&nbsp;</span>{{ poolName }}
+            <span class="font-semibold">({{ poolTicker }})&nbsp;</span
+            >{{ poolName }}
           </div>
         </div>
       </ui-dialog-title>

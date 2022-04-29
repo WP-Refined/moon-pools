@@ -1,6 +1,6 @@
 <template>
   <div class="mx-2">
-    <pool-search></pool-search>
+    <pool-search @search="onSearch" />
     <div class="overflow-hidden">
       <ui-table
         v-model="selectedRows"
@@ -8,20 +8,22 @@
         :data="poolData"
         :thead="thead"
         :tbody="tbody"
+        :show-progress="poolTableLoading"
       >
         <template #actions="{ data }">
           <ui-fab mini icon="add" @click="showPoolModal(data)" />
         </template>
 
         <template #ticker="{ data }">
-          <div class="ticker">{{ data?.ticker }}</div>
+          <div class="ticker">{{ data?.detail?.ticker }}</div>
         </template>
 
         <template #th-saturation>
           Saturation
           <ui-icon
             v-tooltip="
-              'Return of ADA based on staking result from last 30 days'
+              'Amount of ADA currently staked within the pool. If the pool is close to 100%' +
+              ' capacity it is recommended to stake with another pool.'
             "
             aria-describedby="th-cell-1"
           >
@@ -69,7 +71,6 @@ const TABLE_HEADERS = [
   },
   {
     value: 'Ticker',
-    sort: 'asc',
     columnId: 'ticker',
   },
   {
@@ -124,6 +125,7 @@ export default {
       poolFilter: '',
       poolModalData: {},
       poolModalOpen: false,
+      poolTableLoading: true,
     };
   },
 
@@ -132,23 +134,34 @@ export default {
   },
 
   methods: {
-    loadPoolData() {
-      HttpFetch.get('/pools')
+    loadPoolData(filter) {
+      filter = filter || '';
+
+      HttpFetch.get(`/pools?filter=${filter}`)
         .then(response => {
           this.$data.poolData = response?.data || [];
           this.$data.total = response?.meta?.last_page || 1;
+          this.$data.poolTableLoading = false;
         })
         .catch(error => console.error('Unexpected error occurred: ', error));
     },
+
     showPoolModal(data) {
       this.$data.poolModalData = { ...(data?.detail || {}) };
       this.$data.poolModalOpen = true;
     },
+
     closePoolModal() {
       this.$data.poolModalOpen = false;
     },
+
     onPage(page) {
       alert('Page change to ' + page);
+    },
+
+    onSearch(input) {
+      this.$data.poolTableLoading = true;
+      this.loadPoolData(input);
     },
   },
 };
