@@ -38,7 +38,7 @@
                 :href="poolWebsite"
                 rel="nofollow noreferrer"
                 target="_blank"
-                class="truncate"
+                class="truncate text-moon-purple"
               >
                 {{ poolWebsite }}
               </a>

@@ -34,10 +34,10 @@ export default {
         case amount >= 70:
           return 'bg-orange-400';
         case amount >= 50:
-          return 'bg-green-400';
+          return 'bg-moon-green';
         case amount < 49:
         default:
-          return 'bg-green-400';
+          return 'bg-moon-green';
       }
     },
 

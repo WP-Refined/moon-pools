@@ -18,8 +18,6 @@ class PoolModel extends DomainModel
     public $table = 'pools';
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array<int, string>
      */
     protected $fillable = [
@@ -37,5 +35,15 @@ class PoolModel extends DomainModel
     public function history(): HasMany
     {
         return $this->hasMany(PoolHistoryModel::class, 'pool_id');
+    }
+
+    public function scopeSearch($query, string $filter = null)
+    {
+        return $query->whereHas('detail', function ($q) use ($filter) {
+            if ($filter) {
+                $q->where('name', 'LIKE', '%'.$filter.'%')
+                    ->orWhere('ticker', 'LIKE', '%'.$filter.'%');
+            }
+        });
     }
 }

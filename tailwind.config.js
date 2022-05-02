@@ -1,7 +1,12 @@
 module.exports = {
   mode: 'jit',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'moon-purple': '#7849f6',
+        'moon-green': '#39af77',
+      },
+    },
   },
   plugins: [],
   content: [

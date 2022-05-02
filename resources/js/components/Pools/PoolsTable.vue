@@ -22,8 +22,8 @@
           Saturation
           <ui-icon
             v-tooltip="
-              'Amount of ADA currently staked within the pool. If the pool is close to 100%' +
-              ' capacity it is recommended to stake with another pool.'
+              'Pools can only stake a limited amount of ADA before returns are diminished. If the pool is close to 100%' +
+              ' it is recommended to stake with another pool.'
             "
             aria-describedby="th-cell-1"
           >

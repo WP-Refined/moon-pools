@@ -44,7 +44,7 @@
             </ui-item-first-content>
             <ui-item-text-content>Reports</ui-item-text-content>
           </ui-item>
-          <ui-item>
+          <ui-item @click="openSidebar = false">
             <ui-item-first-content>
               <ui-icon>arrow_back</ui-icon>
             </ui-item-first-content>
