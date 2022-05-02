@@ -17,7 +17,11 @@ class PoolController extends Controller
 
     public function index(FetchPoolsRequest $request): JsonResource
     {
-        $pools = $this->poolRepository->findPools($request->get('filter'));
+        if ($request->has('favourites')) {
+            $pools = $this->poolRepository->favouritePools();
+        } else {
+            $pools = $this->poolRepository->findPools($request->get('filter'));
+        }
 
         return new PoolCollection($pools);
     }

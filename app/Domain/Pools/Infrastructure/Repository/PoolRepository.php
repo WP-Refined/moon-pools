@@ -21,4 +21,16 @@ class PoolRepository extends ModelRepository
     {
         return $this->model->search($filter)->paginate(20);
     }
+
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function favouritePools(): LengthAwarePaginator
+    {
+        // TODO: Move static list over to config file
+        return $this->model->with('detail')->whereIn('id', [
+            'pool6rn463c2pl84gplffpkpxq2cs1tz3508f0vsp095ftzdqlwsrygk',
+            'poolt5124pvz6k3sqql0sgrz6ckr0ft2wp0npplgffc4f38x8p95lsyd',
+        ])->paginate(20);
+    }
 }
