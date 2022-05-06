@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Domain\Pools\Domain\Client;
+namespace App\Domain\Common\Domain\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
+use function config;
 
 class BlockFrostClient
 {

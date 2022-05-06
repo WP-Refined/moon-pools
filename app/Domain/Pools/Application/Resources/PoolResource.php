@@ -21,8 +21,6 @@ class PoolResource extends JsonResource
             'retiring_epoch' => $this->retiring_epoch,
             'retired_epoch' => $this->retired_epoch,
             'detail' => $this->whenLoaded('detail', new PoolDetailResource($this->detail)),
-            'created_at' => null,
-            'updated_at' => null,
         ];
     }
 }

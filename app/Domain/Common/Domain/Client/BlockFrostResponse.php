@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Domain\Pools\Domain\Client;
+namespace App\Domain\Common\Domain\Client;
 
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
+use function App\Domain\Pools\Domain\Client\str_starts_with;
 
 class BlockFrostResponse
 {

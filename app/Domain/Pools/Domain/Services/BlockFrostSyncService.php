@@ -2,7 +2,7 @@
 
 namespace App\Domain\Pools\Domain\Services;
 
-use App\Domain\Pools\Domain\Client\BlockFrostClient;
+use App\Domain\Common\Domain\Client\BlockFrostClient;
 use App\Domain\Pools\Domain\DTO\PoolDetailDto;
 use App\Domain\Pools\Domain\DTO\PoolDto;
 use App\Domain\Pools\Infrastructure\Repository\PoolDetailRepository;
