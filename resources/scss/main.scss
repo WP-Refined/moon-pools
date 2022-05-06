@@ -1,5 +1,7 @@
 @use 'tailwindcss/utilities';
 
+@use 'typography';
+
 // TODO: Find a suitable secondary and update component styles
 @use '@material/theme' as theme-variables with (
   $primary: #7849f6,

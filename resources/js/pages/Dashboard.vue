@@ -15,7 +15,9 @@
         <ui-panel>
           <favourite-pools />
         </ui-panel>
-        <ui-panel>...</ui-panel>
+        <ui-panel>
+          <reward-list />
+        </ui-panel>
       </ui-panels>
     </template>
   </app-layout>
@@ -25,6 +27,7 @@
 import AppLayout from '../components/Layout/AppLayout.vue';
 import PoolsTable from '../components/Pools/PoolsTable.vue';
 import FavouritePools from '../components/Favourites/FavouritePools.vue';
+import RewardList from '../components/Rewards/RewardList.vue';
 import Insights from '../components/Reports/Insights.vue';
 
 export default {
@@ -32,6 +35,7 @@ export default {
     AppLayout,
     PoolsTable,
     FavouritePools,
+    RewardList,
     Insights,
   },
   data() {

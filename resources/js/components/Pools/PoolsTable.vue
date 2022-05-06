@@ -138,25 +138,29 @@ export default {
   },
 
   mounted() {
-    this.loadPoolData('', this.$props.favourites);
+    this.loadPools('', this.$props.favourites);
   },
 
   methods: {
-    loadPoolData(filter, showFavourites) {
+    loadPools(filter, showFavourites) {
       filter = filter || '';
       showFavourites = showFavourites || false;
 
       if (showFavourites) {
-        return HttpFetch.get(`/pools?favourites=1`)
-          .then(response => {
-            this.$data.poolData = response?.data || [];
-            this.$data.total = response?.meta?.last_page || 1;
-            this.$data.poolTableLoading = false;
-          })
-          .catch(error => console.error('Unexpected error occurred: ', error));
+        return this.loadFavouritePools();
       }
 
       return HttpFetch.get(`/pools?filter=${filter}`)
+        .then(response => {
+          this.$data.poolData = response?.data || [];
+          this.$data.total = response?.meta?.last_page || 1;
+          this.$data.poolTableLoading = false;
+        })
+        .catch(error => console.error('Unexpected error occurred: ', error));
+    },
+
+    loadFavouritePools() {
+      return HttpFetch.get(`/pools?favourites=1`)
         .then(response => {
           this.$data.poolData = response?.data || [];
           this.$data.total = response?.meta?.last_page || 1;
@@ -180,7 +184,7 @@ export default {
 
     onSearch(input) {
       this.$data.poolTableLoading = true;
-      this.loadPoolData(input);
+      this.loadPools(input);
     },
   },
 };

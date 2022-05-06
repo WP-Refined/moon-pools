@@ -1,7 +1,6 @@
 <template>
-  <div class="mb-4 text-center">
-    <ui-icon>volunteer_activism</ui-icon>
-    <h2>Our favourite pools and supportors of this site, check them out!</h2>
+  <div class="mt-4 mb-1 mx-2 text-center">
+    <h3 class="my-0">Our favourite pools, and supporters. <br>Check them out! <ui-icon :size="12" class="text-red-400 align-middle">favorite</ui-icon></h3>
   </div>
   <pools-table favourites></pools-table>
 </template>
