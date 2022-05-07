@@ -6,6 +6,9 @@ module.exports = {
         'moon-purple': '#7849f6',
         'moon-green': '#39af77',
       },
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+      },
     },
   },
   plugins: [],

@@ -2,6 +2,7 @@
 
 namespace App\Domain\Network\Application\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -25,6 +26,7 @@ class NetworkSupplyResource extends JsonResource
             'reserve_supply' => $this->reserve_supply,
             'live_stake' => $this->live_stake,
             'active_stake' => $this->active_stake,
+            'record_date' => Carbon::parse($this->created_at)->format('Y-m-d'),
         ];
     }
 }
