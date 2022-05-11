@@ -22,7 +22,7 @@ class SyncAllPoolDataJob implements ShouldQueue, ShouldBeUnique
     public function handle(PoolCoordinator $coordinator)
     {
         // Ensure that sync is enabled for the current deployment
-        if (!config('gateways.blockfrost.sync_enabled')) {
+        if (!config('gateways.blockfrost.full_sync')) {
             return;
         }
 

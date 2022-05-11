@@ -75,7 +75,7 @@ export default {
 
   methods: {
     loadRecentNetworkSupply() {
-      return HttpFetch.get('/api/network/supply')
+      return HttpFetch.get('/network/supply')
         .then(response => {
           const recentSupply = [];
 

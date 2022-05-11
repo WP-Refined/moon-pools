@@ -14,7 +14,6 @@ class NetworkSupplyModel extends DomainModel
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
         'max_supply',
         'total_supply',
         'circulating_supply',

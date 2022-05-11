@@ -16,16 +16,18 @@ class NetworkSupplyResource extends JsonResource
      */
     public function toArray($request)
     {
+        $conversion = config('gateways.lovelace.conversion', 1000000);
+
         return [
             'id' => $this->id,
-            'max_supply' => $this->max_supply,
-            'total_supply' => $this->total_supply,
-            'circulating_supply' => $this->circulating_supply,
-            'locked_supply' => $this->locked_supply,
-            'treasury_supply' => $this->treasury_supply,
-            'reserve_supply' => $this->reserve_supply,
-            'live_stake' => $this->live_stake,
-            'active_stake' => $this->active_stake,
+            'max_supply' => $this->max_supply / $conversion,
+            'total_supply' => $this->total_supply / $conversion,
+            'circulating_supply' => $this->circulating_supply / $conversion,
+            'locked_supply' => $this->locked_supply / $conversion,
+            'treasury_supply' => $this->treasury_supply / $conversion,
+            'reserve_supply' => $this->reserve_supply / $conversion,
+            'live_stake' => $this->live_stake / $conversion,
+            'active_stake' => $this->active_stake / $conversion,
             'record_date' => Carbon::parse($this->created_at)->format('Y-m-d'),
         ];
     }

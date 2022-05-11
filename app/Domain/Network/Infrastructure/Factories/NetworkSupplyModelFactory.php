@@ -20,6 +20,7 @@ class NetworkSupplyModelFactory extends Factory
             'reserve_supply' => '46635632000000',
             'live_stake' => '23204950463991654',
             'active_stake' => '22210233523456321',
+            'record_date' => '2022-05-11',
         ];
     }
 }

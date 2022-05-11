@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\Pools\Application\Jobs;
+namespace App\Domain\Network\Application\Jobs;
 
-use App\Domain\Pools\Domain\Coordinators\PoolCoordinator;
+use App\Domain\Network\Domain\Coordinators\NetworkCoordinator;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 
-class SyncPoolDetailsJob implements ShouldQueue, ShouldBeUnique
+class SyncNetworkSupplyJob implements ShouldQueue, ShouldBeUnique
 {
     use Dispatchable, InteractsWithQueue, Queueable;
 
@@ -19,15 +19,15 @@ class SyncPoolDetailsJob implements ShouldQueue, ShouldBeUnique
      *
      * @return void
      */
-    public function handle(PoolCoordinator $coordinator)
+    public function handle(NetworkCoordinator $coordinator)
     {
         // Ensure that sync is enabled for the current deployment
-        if (!config('gateways.blockfrost.detail_sync')) {
+        if (!config('gateways.blockfrost.network_sync')) {
             return;
         }
 
         try {
-            $coordinator->syncPoolDetailsFromBlockFrost();
+            $coordinator->syncNetworkSupplyFromBlockFrost();
         } catch (Exception $e) {
             $this->fail($e);
         }

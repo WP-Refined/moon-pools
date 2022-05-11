@@ -15,15 +15,18 @@ return new class extends Migration
     {
         Schema::create('network_supply', function (Blueprint $table) {
             $table->id();
-            $table->integer('max_supply')->unsigned();
-            $table->integer('total_supply')->unsigned();
-            $table->integer('circulating_supply')->unsigned();
-            $table->integer('locked_supply')->unsigned();
-            $table->integer('treasury_supply')->unsigned();
-            $table->integer('reserve_supply')->unsigned();
-            $table->integer('live_stake')->unsigned();
-            $table->integer('active_stake')->unsigned();
+            $table->string('max_supply', 50)->unsigned();
+            $table->string('total_supply', 50)->unsigned();
+            $table->string('circulating_supply', 50)->unsigned();
+            $table->string('locked_supply', 50)->unsigned();
+            $table->string('treasury_supply', 50)->unsigned();
+            $table->string('reserve_supply', 50)->unsigned();
+            $table->string('live_stake', 50)->unsigned();
+            $table->string('active_stake', 50)->unsigned();
+            $table->string('record_date', 10);
             $table->timestamps();
+
+            $table->unique('record_date');
         });
     }
 

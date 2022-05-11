@@ -3,11 +3,10 @@
 namespace App\Domain\Network\Domain\DTO;
 
 use App\Domain\Common\Domain\DTO\DomainDto;
+use Carbon\Carbon;
 
 class NetworkSupplyDto extends DomainDto
 {
-    private int $id;
-    
     private int $max_supply;
     
     private int $total_supply;
@@ -23,24 +22,8 @@ class NetworkSupplyDto extends DomainDto
     private int $live_stake;
     
     private int $active_stake;
-    
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-    
-    /**
-     * @param int $id
-     * @return NetworkSupplyDto
-     */
-    public function setId(int $id): NetworkSupplyDto
-    {
-        $this->id = $id;
-        return $this;
-    }
+
+    private Carbon $record_date;
     
     /**
      * @return int
@@ -185,11 +168,28 @@ class NetworkSupplyDto extends DomainDto
         $this->active_stake = $active_stake;
         return $this;
     }
+
+    /**
+     * @return Carbon
+     */
+    public function getRecordDate(): Carbon
+    {
+        return $this->record_date;
+    }
+    
+    /**
+     * @param Carbon $record_date
+     * @return NetworkSupplyDto
+     */
+    public function setRecordDate(Carbon $record_date): NetworkSupplyDto
+    {
+        $this->record_date = $record_date;
+        return $this;
+    }
     
     public function toArray(): array
     {
         return [
-            'id' => $this->getId(),
             'max_supply' => $this->getMaxSupply(),
             'total_supply' => $this->getTotalSupply(),
             'circulating_supply' => $this->getCirculatingSupply(),
@@ -198,6 +198,7 @@ class NetworkSupplyDto extends DomainDto
             'reserve_supply' => $this->getReserveSupply(),
             'live_stake' => $this->getLiveStake(),
             'active_stake' => $this->getActiveStake(),
+            'record_date' => $this->getRecordDate()->format('Y-m-d'),
         ];
     }
 }
