@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Domain\Network\Application\Commands\TriggerNetworkSync;
+use App\Domain\Network\Application\Jobs\SyncNetworkSupplyJob;
 use App\Domain\Pools\Application\Commands\TriggerPoolSync;
 use App\Domain\Pools\Application\Jobs\SyncPoolDetailsJob;
 use App\Domain\Pools\Application\Jobs\SyncPoolMetaDataJob;
@@ -13,6 +15,7 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         TriggerPoolSync::class,
+        TriggerNetworkSync::class,
     ];
 
     /**
@@ -27,6 +30,8 @@ class Kernel extends ConsoleKernel
             $schedule->command('telescope:prune')->daily();
             return;
         }
+
+        $schedule->job(SyncNetworkSupplyJob::class)->dailyAt('00:10')->withoutOverlapping();
 
         $schedule->job(SyncPoolsJob::class)->fridays()->withoutOverlapping();
         $schedule->job(SyncPoolDetailsJob::class)->dailyAt('00:00')->withoutOverlapping();

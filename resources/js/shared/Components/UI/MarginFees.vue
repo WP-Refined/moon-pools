@@ -27,8 +27,7 @@ export default {
 
   computed: {
     fixedFees() {
-      // return Math.abs(Math.trunc(Number(this.$props.fee).toFixed(2)));
-      return 340;
+      return Math.abs(Math.trunc(Number(this.$props.fee)));
     },
 
     marginPercentage() {

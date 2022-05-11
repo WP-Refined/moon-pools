@@ -5,7 +5,7 @@ namespace App\Domain\Common\Domain\Client;
 use Illuminate\Support\LazyCollection;
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
-use function App\Domain\Pools\Domain\Client\str_starts_with;
+use function str_starts_with;
 
 class AdaPoolsResponse
 {

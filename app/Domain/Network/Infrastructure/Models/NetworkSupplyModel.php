@@ -22,5 +22,6 @@ class NetworkSupplyModel extends DomainModel
         'reserve_supply',
         'live_stake',
         'active_stake',
+        'record_date',
     ];
 }

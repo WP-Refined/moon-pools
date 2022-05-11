@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('live_stake', 50)->unsigned();
             $table->string('active_stake', 50)->unsigned();
             $table->string('record_date', 10);
-            $table->timestamps();
 
             $table->unique('record_date');
         });
